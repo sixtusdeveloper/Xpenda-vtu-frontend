@@ -87,7 +87,7 @@ const ContactSection = () => {
                 <h4 className="py-2 text-lg font-bold">
                   <strong>Contact Us</strong>
                 </h4>
-                <div className="inline-flex py-2 items-center border rounded-lg p-2 w-full my-1">
+                <div className="inline-flex py-2 items-center border rounded-lg p-2 w-full my-2">
                   <Image
                     src="/images/location.webp"
                     alt="Location"
@@ -100,7 +100,7 @@ const ContactSection = () => {
                   </p>
                 </div>
                 <br />
-                <div className="inline-flex py-2 items-center border rounded-lg p-2 w-full my-1">
+                <div className="inline-flex py-2 items-center border rounded-lg p-2 w-full my-2">
                   <Image
                     src="/images/phone.png"
                     alt="Phone"
@@ -113,7 +113,7 @@ const ContactSection = () => {
                   </p>
                 </div>
                 <br />
-                <div className="inline-flex items-center border rounded-lg p-2 w-full my-1">
+                <div className="inline-flex items-center border rounded-lg p-2 w-full my-2">
                   <Image
                     src="/images/Gmail.png"
                     alt="Mail"
@@ -129,7 +129,7 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div className="border shadow-md p-4 sm:p-8 lg:p-16 rounded-lg justify-start items-start space-y-4 w-full">
+          <div className="border shadow-md p-4 sm:p-8 lg:py-14 lg:px-16 rounded-lg justify-start items-start space-y-4 w-full">
             {/* Contact form component imported here */}
             <ContactForm />
           </div>

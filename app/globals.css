@@ -129,7 +129,7 @@ html {
 
 .contact-img {
   width: 100% !important;
-  height: 330px !important;
+  height: 300px !important;
   object-fit: cover !important;
   overflow: hidden;
 }

@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import ClerkProviderWrapper from "@/components/ClerkProviderWrapper"; // ✅ Import
+import TawkToWidget from "@/components/TawkToWidget";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -65,8 +66,8 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={inter.className}>
-        <ClerkProviderWrapper>
+      <ClerkProviderWrapper>
+        <body className={inter.className}>
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"
@@ -75,8 +76,10 @@ export default function RootLayout({
           >
             {children}
           </ThemeProvider>
-        </ClerkProviderWrapper>
-      </body>
+          <TawkToWidget />
+          {/* this </ClerkProviderWrapper> was here before */}
+        </body>
+      </ClerkProviderWrapper>
     </html>
   );
 }

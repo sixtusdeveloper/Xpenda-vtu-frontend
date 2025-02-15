@@ -101,7 +101,8 @@ const Footer = () => {
 
       {/* COPYRIGHT SECTION */}
       <div className="border-t border-gray-800 mt-8 pt-6 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} Xpenda VTU. All rights reserved.
+        © {new Date().getFullYear()} Xpenda VTU. Developed by Sixtusdev. All
+        rights reserved.
         <span className="block mt-2">
           <Link href="/terms" className="text-yellow-400 hover:underline">
             Terms & Conditions
