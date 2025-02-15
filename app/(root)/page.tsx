@@ -1,7 +1,15 @@
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import { navigation } from "@/data";
-import Pricing from "@/components/Pricing";
+import TransactionSection from "@/components/TransactionSection";
+import ServicesSection from "@/components/ServicesSection";
+import PricingSection from "@/components/PricingSection";
+import WalletSection from "@/components/WalletSection";
+import APISection from "@/components/APISection";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
+import AboutSection from "@/components/AboutSection";
+import ScrollIndicator from "@/components/ScrollIndicator";
 
 export default function Home() {
   return (
@@ -9,7 +17,15 @@ export default function Home() {
       <div className="max-w-7xl w-screen">
         <Navbar navigation={navigation} />
         <Hero />
-        <Pricing />
+        <ServicesSection />
+        <AboutSection />
+        <PricingSection />
+        <WalletSection />
+        <TransactionSection />
+        <APISection />
+        <ContactSection />
+        <Footer />
+        <ScrollIndicator />
       </div>
     </main>
   );
