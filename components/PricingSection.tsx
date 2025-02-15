@@ -28,13 +28,13 @@ const pricingData = [
 
 const PricingSection = () => {
   return (
-    <section id="pricing" className="relative py-10 bg-secondary">
+    <section id="pricing" className="relative py-10 md::py-20 bg-secondary">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <h2 className="text-center text-3xl md:text-4xl font-extrabold mb-6 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text">
+        <h2 className="text-start md:text-center text-3xl md:text-4xl font-extrabold mb-6 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text">
           Affordable VTU Pricing Plans
         </h2>
-        <p className="text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-start md:text-center mb-12 max-w-2xl mx-auto">
           Get the best data & airtime rates across all networks. Choose your
           preferred plan and start recharging instantly.
         </p>

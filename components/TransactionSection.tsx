@@ -19,7 +19,7 @@ const TransactionSection = () => {
         </div>
 
         {/* Right Side - Text Content */}
-        <div className="text-center md:text-left">
+        <div className="text-left md:text-left">
           <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text">
             Secure & Reliable Transactions
           </h2>

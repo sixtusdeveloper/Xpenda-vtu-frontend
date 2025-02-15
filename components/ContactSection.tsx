@@ -67,7 +67,7 @@ const ContactSection = () => {
           <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text">
             Get in Touch with Us
           </h2>
-          <p className="text-base mt-4 p-2 lg:p-4">
+          <p className="text-base mt-4 p-0 lg:p-4">
             Need help? Our support team is available 24/7. Send us a message and
             we’ll get back to you as soon as possible.
           </p>

@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
         {/* BRANDING */}
         <div>
-          <Image src="/logo.png" alt="Xpenda Logo" width={120} height={30} />
+          <Image src="/logo.png" alt="Xpenda Logo" width={80} height={30} />
           <p className="mt-4 text-sm text-gray-400">
             <strong>Xpenda</strong> is your trusted platform for{" "}
             <strong>buying and reselling</strong>&nbsp; Airtime, Data, and

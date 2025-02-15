@@ -5,10 +5,10 @@ import { Code, Cloud, Lock, Server } from "lucide-react";
 
 const APISection = () => {
   return (
-    <section id="api-docs" className="py-20 bg-secondary">
+    <section id="api-docs" className="py-10 md:py-20 bg-secondary">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Left Side - Text Content */}
-        <div className="text-center md:text-left">
+        <div className="text-left md:text-left">
           <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text">
             Powerful & Secure API Integration
           </h2>
