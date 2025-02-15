@@ -70,7 +70,10 @@ const ScrollIndicator = () => {
       onClick={handleClick}
       className={`fixed ${
         atTop ? "top-24" : "bottom-24"
-      } right-2 lg:right-10 z-50 cursor-pointer p-3 rounded-full bg-secondary border shadow-lg transition-colors duration-300`}
+      } cursor-pointer p-4 rounded-full border shadow-lg
+      bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-white 
+      animate-[pulse_2s_ease-in-out_infinite] transition-all duration-700 
+      hover:scale-110 hover:animate-none z-50`}
       style={{ transition: "top 0.3s, bottom 0.3s" }}
     >
       {scrollDirection === "down" ? (

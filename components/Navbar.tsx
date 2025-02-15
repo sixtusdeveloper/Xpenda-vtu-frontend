@@ -95,7 +95,7 @@ export default function Navbar({
                 href={`#${item.href.substring(1)}`}
                 className={`text-base hover:text-yellow-600 tracking-wide font-semibold font-sans cursor-pointer ${
                   activeSection === item.href.substring(1)
-                    ? "bg-gradient-to-r from-yellow-500 via-blue-500 to-yellow-600 font-semibold bg-clip-text text-transparent"
+                    ? "bg-gradient-to-r from-yellow-500 via-blue-400 to-yellow-500 font-semibold bg-clip-text text-transparent"
                     : "text-default"
                 } hover:text-primary`}
                 onClick={(e) => {
