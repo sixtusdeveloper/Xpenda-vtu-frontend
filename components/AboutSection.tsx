@@ -65,7 +65,7 @@ const About = () => {
         {/* Right Side - Image */}
         <div className="flex justify-center">
           <Image
-            src="/images/about.png" // Replace with the generated image
+            src="/images/about-xpenda.png" // Replace with the generated image
             alt="About Xpenda"
             width={500}
             height={500}

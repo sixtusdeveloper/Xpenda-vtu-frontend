@@ -75,7 +75,7 @@ const ContactSection = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:gap-6 lg:gap-6 gap-2 w-full">
           <div className="border shadow-md rounded-lg p-4 md:p-4 w-full md:text-start relative md:w-1/2">
             <Image
-              src="/images/contact.png"
+              src="/images/contact-service.png"
               alt="profile image"
               width={500}
               height={300}

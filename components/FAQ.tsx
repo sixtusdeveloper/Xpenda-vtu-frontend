@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { faqs } from "@/data/faq-data"; // Import FAQs data
 
 const FAQPage = () => {
@@ -16,6 +16,18 @@ const FAQPage = () => {
     setFeedback(response);
     setShowModal(true);
   };
+
+  // Prevent background scrolling when modal is open
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [showModal]);
 
   return (
     <div id="faq" className="w-full pt-10 bg-secondary">
@@ -81,8 +93,14 @@ const FAQPage = () => {
 
       {/* Modal for Feedback */}
       {showModal && (
-        <div className="fixed inset-0 bg-black/50 flex justify-center items-center">
-          <div className="bg-secondary border p-8 rounded-lg max-w-lg w-full text-center">
+        <div
+          className="fixed inset-0 bg-black/50 flex justify-center items-center"
+          onClick={() => setShowModal(false)} // Click outside to close
+        >
+          <div
+            className="bg-secondary border p-8 rounded-lg max-w-lg w-full text-center"
+            onClick={(e) => e.stopPropagation()} // Prevent click inside modal from closing
+          >
             {feedback === "yes" ? (
               <>
                 <div className="text-4xl text-green-500 mb-4">👍</div>

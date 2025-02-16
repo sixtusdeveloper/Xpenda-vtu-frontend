@@ -16,3 +16,17 @@ export const aboutNavigation = [
     { name: "FAQ", href: "#faq" },
   ];
   
+//============================= Xpenda Pricing page Navigation Links ============================//
+export const pricingNavigation = [
+    { name: "Pricing", href: "#pricing" },
+    { name: "Discounts", href: "#discounts" },
+    { name: "Wallet", href: "#wallet" },
+    { name: "Developer API", href: "#dev-api" },
+  ];
+//============================= Xpenda API Docs page Navigation Links ============================//
+export const apiDocsNavigation = [
+    { name: "Usage", href: "#api-usage" },
+    { name: "Plugins", href: "#api-plugins" },
+    { name: "Authentication Key", href: "#auth-key" },
+  ];
+  
