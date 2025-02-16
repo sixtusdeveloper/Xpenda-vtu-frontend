@@ -5,6 +5,7 @@ import { useUser } from "@clerk/nextjs";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 const Home = () => {
   const { user, isSignedIn } = useUser();
@@ -90,12 +91,17 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, ease: "easeOut" }}
           >
-            <Button className="h-12 px-6 py-3 rounded-lg bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-sm md:text-base lg:text-base">
-              Get Started
-            </Button>
-            <Button className="h-12 px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-600 text-white hover:bg-purple-700 font-semibold text-sm md:text-base lg:text-base">
-              See Services
-            </Button>
+            <Link href="/signup">
+              <Button className="h-12 px-6 py-3 rounded-lg bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-sm md:text-base lg:text-base">
+                Get Started
+              </Button>
+            </Link>
+
+            <Link href="/about">
+              <Button className="h-12 px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-600 text-white hover:bg-purple-700 font-semibold text-sm md:text-base lg:text-base">
+                About Us
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
 

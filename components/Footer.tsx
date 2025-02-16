@@ -104,13 +104,16 @@ const Footer = () => {
         © {new Date().getFullYear()} Xpenda VTU. Developed by Sixtusdev. All
         rights reserved.
         <span className="block mt-2">
-          <Link href="/terms" className="text-yellow-400 hover:underline">
+          <Link
+            href="/terms"
+            className="text-yellow-400 hover:underline text-sm"
+          >
             Terms & Conditions
           </Link>{" "}
           |
           <Link
             href="/privacy"
-            className="text-yellow-400 hover:underline ml-2"
+            className="text-yellow-400 hover:underline ml-2 text-sm"
           >
             Privacy Policy
           </Link>

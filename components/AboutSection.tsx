@@ -10,10 +10,10 @@ const About = () => {
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left Side - About Content */}
         <div>
-          <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text mb-6">
+          <h2 className="text-left md:text-left text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text mb-6">
             About Xpenda
           </h2>
-          <p className="text-base mb-6 leading-relaxed">
+          <p className="text-left md:text-left text-base mb-6 leading-relaxed">
             Xpenda is a trusted <strong> Top-Up (VTU) platform </strong>Virtual
             providing seamless transactions for{" "}
             <strong>airtime, data, bills, and subscriptions</strong> at

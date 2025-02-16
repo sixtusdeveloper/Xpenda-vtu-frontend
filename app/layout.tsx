@@ -66,8 +66,8 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <ClerkProviderWrapper>
-        <body className={inter.className}>
+      <body className={inter.className}>
+        <ClerkProviderWrapper>
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"
@@ -78,8 +78,8 @@ export default function RootLayout({
           </ThemeProvider>
           <TawkToWidget />
           {/* this </ClerkProviderWrapper> was here before */}
-        </body>
-      </ClerkProviderWrapper>
+        </ClerkProviderWrapper>
+      </body>
     </html>
   );
 }

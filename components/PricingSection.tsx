@@ -52,7 +52,8 @@ const PricingSection = () => {
                   src={plan.image}
                   alt={`${plan.network} Logo`}
                   layout="fill"
-                  objectFit="contain"
+                  fill
+                  style={{ objectFit: "cover" }}
                   className="rounded-lg network-img"
                 />
               </div>
