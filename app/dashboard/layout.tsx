@@ -1,16 +1,36 @@
 "use client";
 
-import React, { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState, Suspense } from "react";
 import Sidebar from "@/components/dashboard/Sidebar";
 import { FaBars, FaTimes } from "react-icons/fa";
 import ToggleMode from "@/components/ui/toggleMode";
+import { useRouter } from "next/navigation";
+import { useUser } from "@clerk/nextjs";
 
-export default function DashboardLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const pathname = usePathname();
+  const [currentPage, setCurrentPage] = useState(
+    pathname.split("/").pop() || "dashboard"
+  );
+
+  const { isSignedIn, isLoaded } = useUser();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (isLoaded && !isSignedIn) {
+      router.push("/sign-in"); // Redirect unauthenticated users to sign-in
+    }
+  }, [isLoaded, isSignedIn, router]);
+
+  if (!isLoaded || !isSignedIn) {
+    return null; // Prevent rendering until authentication is checked
+  }
+
+  useEffect(() => {
+    setCurrentPage(pathname.split("/").pop() || "dashboard");
+  }, [pathname]); // ✅ Updates page immediately on URL change
 
   return (
     <div className="flex h-screen">
@@ -20,7 +40,7 @@ export default function DashboardLayout({
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Header */}
-        <header className="shadow p-4 flex justify-between items-center md:px-6">
+        <header className="shadow p-4 flex justify-between items-center md:px-6 border">
           <button
             className="md:hidden"
             onClick={() => setSidebarOpen(!isSidebarOpen)}
@@ -29,15 +49,22 @@ export default function DashboardLayout({
           </button>
 
           <ToggleMode />
-
-          <h2 className="text-xl font-semibold capitalize">Dashboard</h2>
+          <h2 className="text-xl font-semibold capitalize">
+            {currentPage.replace("-", " ")}
+          </h2>
         </header>
 
-        {/* Page Content */}
-        <main className="flex-1 overflow-x-hidden overflow-y-auto p-4 md:p-6">
-          {children}
-        </main>
+        {/* ✅ Wrap in Suspense to prevent delays */}
+        <Suspense
+          fallback={<div className="text-center text-lg">Loading...</div>}
+        >
+          <main className="flex-1 overflow-x-hidden overflow-y-auto p-4 md:p-6">
+            {children}
+          </main>
+        </Suspense>
       </div>
     </div>
   );
-}
+};
+
+export default DashboardLayout;

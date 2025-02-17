@@ -3,8 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 const About = () => {
+  const router = useRouter();
+  const navigateToAbout = () => {
+    router.push("/about");
+  };
   return (
     <section id="about" className="relative py-16 bg-secondary">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -55,11 +60,14 @@ const About = () => {
               </p>
             </div>
           </div>
-          <Link href="/about">
-            <Button className="mt-6 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-lg">
-              Learn More
-            </Button>
-          </Link>
+
+          <Button
+            type="button"
+            onClick={navigateToAbout}
+            className="mt-6 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-lg"
+          >
+            Learn More
+          </Button>
         </div>
 
         {/* Right Side - Image */}
