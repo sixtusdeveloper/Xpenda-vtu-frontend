@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { ShieldCheckIcon, LockIcon, CreditCardIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -52,13 +51,13 @@ const TransactionSection = () => {
             </li>
           </ul>
           <div className="mt-6">
-            <Button
+            <button
               type="button"
               onClick={navigateToTransactions}
               className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-lg"
             >
               View Transactions
-            </Button>
+            </button>
           </div>
         </div>
       </div>

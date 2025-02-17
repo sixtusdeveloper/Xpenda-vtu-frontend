@@ -29,7 +29,7 @@ export default function RootLayout({
         {/* Open Graph Meta Tags */}
         <meta
           property="og:title"
-          content="Xpenda - Buy & Resell Airtime & Data in Nigeria"
+          content="Xpenda - Buy & Resell Airtime & Data plus your ePins and Eletectricity subscriptions in Nigeria"
         />
         <meta
           property="og:description"

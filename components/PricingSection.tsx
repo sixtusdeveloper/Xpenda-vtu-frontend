@@ -1,9 +1,7 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { pricingData } from "@/data/pricing-lists";
 import { useRouter } from "next/navigation";
 
@@ -50,7 +48,7 @@ const PricingSection = () => {
               </h3>
 
               {/* Pricing List */}
-              <ul className="space-y-2 text-sm text-center w-full">
+              <ul className="space-y-2 text-xs text-center w-full">
                 {plan.prices.map((price, idx) => (
                   <li
                     key={idx}
@@ -66,13 +64,13 @@ const PricingSection = () => {
 
         {/* See More Button */}
         <div className="text-center mt-10">
-          <Button
+          <button
             type="button"
             onClick={navigateToPricing}
             className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-lg shadow-lg"
           >
             See All Pricing
-          </Button>
+          </button>
         </div>
       </div>
     </section>

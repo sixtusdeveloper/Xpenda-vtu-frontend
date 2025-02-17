@@ -1,9 +1,14 @@
+"use client";
+
 import React from "react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { FaBookOpen, FaCode } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 const APIDocsSection = () => {
+  const router = useRouter();
+  const navigateToAPIDocs = () => {
+    router.push("/api-docs");
+  };
   return (
     <section
       id="dev-api"
@@ -53,11 +58,13 @@ const APIDocsSection = () => {
 
         {/* Call to Action */}
         <div className="mt-10">
-          <Link href="/api-docs">
-            <Button className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:scale-105 text-white font-semibold text-base h-12 px-6 py-3 rounded-lg shadow-lg">
-              Read API Docs
-            </Button>
-          </Link>
+          <button
+            type="button"
+            onClick={navigateToAPIDocs}
+            className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:scale-105 text-white font-semibold text-base h-12 px-6 py-3 rounded-lg shadow-lg"
+          >
+            Read API Docs
+          </button>
         </div>
       </div>
     </section>

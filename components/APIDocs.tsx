@@ -1,22 +1,16 @@
 "use client";
 
 import React from "react";
-import { Button } from "@/components/ui/button";
-import {
-  FaCopy,
-  FaKey,
-  FaCode,
-  FaBookOpen,
-  FaLock,
-  FaPlug,
-} from "react-icons/fa";
+import { FaCopy, FaKey, FaCode, FaBookOpen, FaLock } from "react-icons/fa";
 import { useState } from "react";
-import Link from "next/link";
 import APIUsage from "./APIUsage";
 import APIPlugin from "./APIPlugin";
+import { useRouter } from "next/navigation";
 
 const APIDocsPage = () => {
   const [copied, setCopied] = useState(false);
+  const router = useRouter();
+  const navigateToDashboard = () => router.push("/dashboard");
 
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -27,14 +21,18 @@ const APIDocsPage = () => {
   return (
     <section className="w-full min-h-screen bg-gray-900 text-white py-16 px-6 md:px-12 lg:px-20">
       <div className="max-w-6xl mx-auto py-10">
-        <h1 className="text-left lg:text-center mt-8 text-4xl font-extrabold bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text">
-          Xpenda Enterprise API Documentation
-        </h1>
-        <p className="mt-4 text-base lg:text-lg text-left lg:text-center opacity-90">
-          The Xpenda API provides seamless VTU integration for developers,
-          resellers, and enterprises. Automate airtime, data, and utility bill
-          transactions in real-time.
-        </p>
+        <div className="text-left py-8">
+          <h1 className="text-left mt-8 text-4xl font-extrabold bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text">
+            Xpenda Enterprise API Documentation
+          </h1>
+          <p className="mt-4 text-base lg:text-lg text-left opacity-90">
+            The Xpenda API provides seamless VTU integration for developers,
+            resellers, and enterprises. Automate airtime, data, and utility bill
+            transactions in real-time.
+          </p>
+        </div>
+        {/* Overview of the API documentation page: */}
+        <APIUsage />
         {/* Features */}
         <div className="grid md:grid-cols-3 gap-8 mt-8 text-left">
           <div className="text-left lg:text-center p-6 bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition-transform">
@@ -208,15 +206,14 @@ const APIDocsPage = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-12">
-          <Link href="/dashboard">
-            <Button className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:scale-105 text-white font-semibold text-base h-12 px-6 py-3 rounded-lg shadow-lg">
-              Get Your API Key
-            </Button>
-          </Link>
+          <button
+            type="button"
+            onClick={navigateToDashboard}
+            className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:scale-105 text-white font-semibold text-base h-12 px-6 py-3 rounded-lg shadow-lg"
+          >
+            Get Your API Key
+          </button>
         </div>
-
-        {/* Overview of the API documentation page: */}
-        <APIUsage />
       </div>
     </section>
   );

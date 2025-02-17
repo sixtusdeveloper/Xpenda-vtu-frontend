@@ -8,7 +8,7 @@ const PricingPlans = () => {
   return (
     <section
       id="pricing"
-      className="w-full px-4 lg:px-8 py-12 bg-gray-900 text-white"
+      className="w-full px-4 lg:px-8 pt-10 bg-gray-900 text-white"
     >
       <div className="max-w-6xl mx-auto">
         <h2 className="text-left lg:text-center text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text py-4">
@@ -57,11 +57,6 @@ const PricingPlans = () => {
             </div>
           </div>
         ))}
-        <div className="text-center mt-8">
-          <Button className="px-6 py-3 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:scale-105 text-white font-semibold rounded-lg shadow-lg">
-            Get Started with Xpenda
-          </Button>
-        </div>
       </div>
     </section>
   );

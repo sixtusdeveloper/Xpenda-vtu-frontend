@@ -91,13 +91,13 @@ const WalletFunding = () => {
               transacting in seconds.
             </p>
             <div className="mt-6 text-left">
-              <Button
+              <button
                 type="button"
                 onClick={openModal}
                 className="px-6 h-12 py-3 bg-white text-purple-600 font-semibold rounded-lg shadow-lg hover:scale-105 transition-all"
               >
                 Fund Your Wallet Now
-              </Button>
+              </button>
             </div>
           </div>
 

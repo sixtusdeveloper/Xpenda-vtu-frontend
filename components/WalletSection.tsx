@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
 const WalletSection = () => {
@@ -30,13 +29,13 @@ const WalletSection = () => {
             <li>✔️ Track your spending easily</li>
           </ul>
           <div className="mt-6">
-            <Button
+            <button
               type="button"
               onClick={navigateToWallet}
               className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-lg"
             >
               Go to Wallet
-            </Button>
+            </button>
           </div>
         </div>
 

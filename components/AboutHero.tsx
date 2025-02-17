@@ -21,14 +21,14 @@ const AboutHero = () => {
         </p>
         <div className="mt-6 flex flex-wrap gap-4">
           <Link href="/pricing">
-            <Button className="h-12 px-6 py-3 rounded-lg bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base">
+            <button className="h-12 px-6 py-3 rounded-lg bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base">
               Get Started
-            </Button>
+            </button>
           </Link>
           <Link href="#about-us">
-            <Button className="h-12 px-6 py-3 rounded-lg bg-transparent ring-1 outline border-white text-white font-semibold text-base">
+            <button className="h-12 px-6 py-3 rounded-lg bg-transparent ring-1 outline border-white text-white font-semibold text-base">
               Learn More
-            </Button>
+            </button>
           </Link>
         </div>
       </div>

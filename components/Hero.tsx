@@ -3,9 +3,7 @@
 import React from "react";
 import { useUser, useClerk } from "@clerk/nextjs";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FaCheckCircle, FaExclamationCircle, FaTimes } from "react-icons/fa";
 import { useState } from "react";
@@ -162,21 +160,21 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.1, ease: "easeOut" }}
             >
-              <Button
+              <button
                 type="button"
                 onClick={openModal}
                 className="h-12 px-6 py-3 rounded-lg bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-sm md:text-base lg:text-base"
               >
                 Get Started
-              </Button>
+              </button>
 
-              <Button
+              <button
                 type="button"
                 onClick={navigateToAbout}
                 className="h-12 px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-600 text-white hover:bg-purple-700 font-semibold text-sm md:text-base lg:text-base"
               >
                 About Us
-              </Button>
+              </button>
             </motion.div>
           </motion.div>
 
@@ -298,7 +296,7 @@ const Home = () => {
                 in.
               </p>
               <button
-                onClick={() => router.push("/pages/materials")}
+                onClick={() => router.push("/dashboard")}
                 className="font-sans bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-600 text-white text-sm tracking-wide block px-4 py-2 rounded-md w-full"
               >
                 Go to dashboard page

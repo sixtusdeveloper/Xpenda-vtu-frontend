@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
 import { ZapIcon, PhoneIcon, TvIcon, DollarSignIcon } from "lucide-react";
 import Link from "next/link";
 
@@ -72,9 +71,9 @@ const ServicesSection = () => {
         {/* CTA Button */}
         <div className="mt-12">
           <Link href="/services">
-            <Button className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-lg">
+            <button className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-lg">
               Explore More Services
-            </Button>
+            </button>
           </Link>
         </div>
       </div>
