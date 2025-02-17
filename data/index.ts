@@ -30,3 +30,11 @@ export const apiDocsNavigation = [
     { name: "Authentication Key", href: "#auth-key" },
   ];
   
+//============================= Xpenda Services page Navigation Links ============================//
+export const ServicesNavigation = [
+    { name: "Services", href: "#services" },
+    { name: "Referral Program", href: "#referral" },
+    { name: "Why Us", href: "#see-why" },
+    { name: "Start Earning", href: "#earnings" },
+  ];
+  

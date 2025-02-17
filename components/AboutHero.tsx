@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const AboutHero = () => {
@@ -25,9 +24,9 @@ const AboutHero = () => {
               Get Started
             </button>
           </Link>
-          <Link href="#about-us">
-            <button className="h-12 px-6 py-3 rounded-lg bg-transparent ring-1 outline border-white text-white font-semibold text-base">
-              Learn More
+          <Link href="/services">
+            <button className="h-11 px-6 py-3 rounded-lg bg-transparent ring-1 outline border-white text-white font-semibold text-base">
+              Our Services
             </button>
           </Link>
         </div>

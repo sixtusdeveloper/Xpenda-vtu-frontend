@@ -93,11 +93,11 @@ export default function Navbar({
               <a
                 key={item.name}
                 href={`#${item.href.substring(1)}`}
-                className={`text-base hover:text-yellow-600 tracking-wide font-semibold font-sans cursor-pointer ${
+                className={`text-base hover:text-pink-700 tracking-wide font-semibold cursor-pointer ${
                   activeSection === item.href.substring(1)
-                    ? "bg-gradient-to-r from-yellow-500 via-blue-400 to-yellow-500 font-semibold bg-clip-text text-transparent"
-                    : "text-default"
-                } hover:text-primary`}
+                    ? "hover:text-pink-700 bg-gradient-to-r from-pink-600 via-pink-500 to-yellow-600 font-semibold bg-clip-text text-transparent"
+                    : "text-default hover:text-pink-700"
+                } hover:text-pink-700`}
                 onClick={(e) => {
                   e.preventDefault();
                   handleClick(item.href);
@@ -113,7 +113,7 @@ export default function Navbar({
             <SignedIn>
               <div className="flex items-center gap-4">
                 {user && (
-                  <span className="hidden lg:block text-sm font-semibold bg-gradient-to-r from-yellow-600 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+                  <span className="hidden lg:block text-base font-semibold bg-gradient-to-r from-pink-600 via-yellow-500 to-purple-500 bg-clip-text text-transparent">
                     {user.firstName}
                   </span>
                 )}
@@ -171,7 +171,7 @@ export default function Navbar({
                     <a
                       key={item.name}
                       href={`#${item.href.substring(1)}`}
-                      className="-mx-3 block text-white font-sans rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:text-blue-600"
+                      className="-mx-3 block text-white rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:text-pink-700"
                       onClick={() => {
                         handleClick(item.href);
                         setMobileMenuOpen(false);
@@ -187,7 +187,7 @@ export default function Navbar({
                       <UserButton />
 
                       {user && (
-                        <span className="text-sm font-semibold bg-gradient-to-r from-yellow-500 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+                        <span className="text-base font-semibold bg-gradient-to-r from-pink-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent">
                           {user.firstName}
                         </span>
                       )}
