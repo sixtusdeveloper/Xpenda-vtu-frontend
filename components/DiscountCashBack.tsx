@@ -150,8 +150,7 @@ const DiscountCashback = () => {
               Sign in to Access the Dashboard
             </h3>
             <p className="mb-4">
-              You need to be signed in to access the dashboard and it features
-              e-books.
+              You need to be signed in to access the dashboard and it features .
             </p>
             {loadingState ? (
               <div className="flex flex-col items-center">

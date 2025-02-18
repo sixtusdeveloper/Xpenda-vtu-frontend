@@ -2,12 +2,12 @@
 
 import { ClerkProvider } from "@clerk/nextjs";
 
-const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY as string;
+// const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY as string;
 
 const ClerkProviderWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <ClerkProvider
-      publishableKey={publishableKey}
+      // publishableKey={publishableKey}
       appearance={{
         variables: {
           colorPrimary: "#FEC100", // Xpenda theme color

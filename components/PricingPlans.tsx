@@ -14,11 +14,11 @@ const PricingPlans = () => {
         <h2 className="text-left lg:text-center text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text py-4">
           Complete Pricing List
         </h2>
-        <p className="text-gray-300 text-left lg:text-center  text-lg mb-8">
+        <p className="text-gray-300 text-left lg:text-center text-lg mb-8">
           Explore our competitive and transparent pricing across all categories.
         </p>
         {pricingData.map((section, index) => (
-          <div key={index} className="mb-10">
+          <div key={index} className="pb-10">
             <h3 className="text-2xl font-semibold text-left bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 bg-clip-text text-transparent py-2">
               {section.category}
             </h3>

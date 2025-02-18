@@ -15,7 +15,7 @@ const APIUsage = () => {
   return (
     <>
       {/* API Overview */}
-      <div className="mt-16 text-left">
+      <div className="mt-8 text-left">
         <h3 className="text-2xl font-extrabold text-yellow-400">
           API Integration Overview
         </h3>
