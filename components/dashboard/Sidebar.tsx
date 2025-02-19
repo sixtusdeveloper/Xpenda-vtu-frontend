@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useTransition, useState, useCallback } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { sidebarItems } from "@/data/dashboard";
 import { Logo } from "../NavbarLogo";
@@ -11,7 +11,7 @@ import {
   SignInButton,
   UserButton,
   useUser,
-} from "@clerk/nextjs"; // ✅ Import Clerk User Hook
+} from "@clerk/nextjs";
 import UserIcon from "@heroicons/react/24/outline/UserIcon";
 
 interface NavbarProps {
@@ -22,36 +22,44 @@ interface NavbarProps {
 interface SidebarProps {
   isSidebarOpen: boolean;
   setSidebarOpen: (isOpen: boolean) => void;
+  setIsPending: (isLoading: boolean) => void; // ✅ New prop to control loading state
 }
 
 const Sidebar: React.FC<SidebarProps & NavbarProps> = ({
   isSidebarOpen,
   setSidebarOpen,
+  setIsPending, // ✅ Received loading state setter
   LogoImg,
   title = "Xpenda",
 }) => {
   const pathname = usePathname();
   const router = useRouter();
-  const { user } = useUser(); // ✅ Get authenticated user
+  const { user } = useUser();
+  const [isTransitioning, startTransition] = useTransition();
 
-  // ✅ Prefetch all dashboard pages on mount
   useEffect(() => {
-    sidebarItems.forEach((item) => {
-      router.prefetch(item.link);
-    });
-  }, [router]);
+    if (isSidebarOpen) {
+      sidebarItems.forEach((item) => router.prefetch(item.link));
+    }
+  }, [isSidebarOpen, router]);
 
-  // ✅ Handle Sidebar Navigation
-  const handleNavigation = (link: string) => {
-    router.push(link, { scroll: false });
-    setSidebarOpen(false);
-  };
+  const handleNavigation = useCallback(
+    (link: string) => {
+      setIsPending(true); // ✅ Set loading to true when clicking a link
+      startTransition(() => {
+        router.replace(link, { scroll: false });
+        setSidebarOpen(false);
+        setTimeout(() => setIsPending(false), 800); // ✅ Simulated delay to avoid flickering
+      });
+    },
+    [router, setSidebarOpen, setIsPending]
+  );
 
   return (
     <aside
       className={`w-64 space-y-6 py-7 px-4 fixed md:relative inset-y-0 left-0 transform ${
         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-      } md:translate-x-0 transition-transform duration-300 ease-in-out h-screen md:h-auto 
+      } md:translate-x-0 transition-transform duration-150 ease-in-out h-screen md:h-auto
       overflow-y-auto z-50 bg-gray-900 text-white no-scrollbar border-r border-gray-800`}
     >
       {/* Sidebar Header */}
@@ -96,7 +104,7 @@ const Sidebar: React.FC<SidebarProps & NavbarProps> = ({
           <div className="flex items-center gap-2">
             <UserButton />
             {user && (
-              <span className="hidden lg:block text-[15px] font-semibold bg-gradient-to-r from-pink-500 via-yellow-500 to-pink-400 bg-clip-text text-transparent">
+              <span className="block lg:block text-[15px] font-semibold bg-gradient-to-r from-pink-500 via-yellow-500 to-pink-400 bg-clip-text text-transparent">
                 {`${user.firstName || ""} ${user.lastName || ""}`.trim()}
               </span>
             )}
