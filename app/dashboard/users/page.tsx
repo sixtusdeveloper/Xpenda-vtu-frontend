@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { useUser } from "@clerk/nextjs";
+import { motion } from "framer-motion";
 
 const UsersDashboard = () => {
   interface User {
@@ -56,8 +57,13 @@ const UsersDashboard = () => {
   );
 
   return (
-    <section className="w-full px-4 lg:px-4 pt-10">
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full pt-10">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="p-2 sm:p-4 space-y-6"
+      >
         <h4>
           {" "}
           {isSignedIn && user ? (
@@ -71,16 +77,16 @@ const UsersDashboard = () => {
             "👋 Hi there!"
           )}
         </h4>
-        <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text py-4">
+        <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text">
           Users Dashboard
         </h2>
-        <p className="text-gray-600 dark:text-gray-300 text-lg mb-8">
+        <p className="text-gray-600 dark:text-gray-300 text-base lg:text-base mb-8">
           Manage and view all registered users along with their roles.
         </p>
         <input
           type="text"
           placeholder="Search users..."
-          className="w-full p-2 mb-4 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+          className="w-full mb-6 p-2 pl-10 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -130,7 +136,7 @@ const UsersDashboard = () => {
               Load More
             </button>
           )}
-      </div>
+      </motion.div>
     </section>
   );
 };

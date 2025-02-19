@@ -101,234 +101,246 @@ const DashboardContent = () => {
   }, []);
 
   return (
-    <>
-      <h4 className="text-lg sm:text-xl font-semibold py-2 mb-2">
-        {" "}
-        {isSignedIn && user ? (
-          <>
-            👋 {greeting},{" "}
-            <span className="font-sans font-bold">
-              {`${user.firstName || ""} ${user.lastName || ""}`.trim()}
-            </span>
-          </>
-        ) : (
-          "👋 Hi there!"
-        )}
-      </h4>
+    <section className="w-full pt-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="p-2 sm:p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-4"
+        className="p-2 sm:p-4 space-y-6"
       >
-        {/* Overview Cards */}
-        {["Total Revenue", "Total Transactions", "New Customers"].map(
-          (title, index) => (
-            <motion.div key={index} whileHover={{ scale: 1.05 }}>
-              <Card className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-6 rounded-lg shadow-md">
-                <CardHeader>
-                  <CardTitle>{title}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex items-center justify-between">
-                  {index === 0 ? (
-                    <FiDollarSign size={32} className="text-green-500" />
-                  ) : index === 1 ? (
-                    <FiTrendingUp size={32} className="text-blue-500" />
-                  ) : (
-                    <FiUsers size={32} className="text-yellow-500" />
-                  )}
-                  <span className="text-xl sm:text-2xl font-semibold">
-                    {loading
-                      ? "Loading..."
-                      : index === 2
-                      ? newCustomers
-                      : "₦12,500,000"}
-                  </span>
-                </CardContent>
-              </Card>
-            </motion.div>
-          )
-        )}
-
-        {/* Charts Section */}
+        <h4>
+          {" "}
+          {isSignedIn && user ? (
+            <>
+              👋 {greeting},{" "}
+              <span className="font-sans font-bold">
+                {`${user.firstName || ""} ${user.lastName || ""}`.trim()}
+              </span>
+            </>
+          ) : (
+            "👋 Hi there!"
+          )}
+        </h4>
+        <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text">
+          Admin Dashboard
+        </h2>
+        <p className="text-gray-600 dark:text-gray-300 text-base lg:text-base mb-8">
+          Manage and view all Users activities here in the admin dashboard.
+        </p>
         <motion.div
-          className="col-span-1 sm:col-span-2"
-          whileHover={{ scale: 1.02 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full py-2 sm:py-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-4"
         >
-          <Card className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-6 rounded-lg shadow-md">
-            <CardHeader>
-              <CardTitle>Revenue Growth</CardTitle>
-            </CardHeader>
-            <CardContent>
-              {loading ? (
-                <div className="h-40 bg-gray-300 dark:bg-gray-700 animate-pulse rounded-md" />
-              ) : (
-                <ResponsiveContainer width="100%" height={250}>
-                  <LineChart data={revenueData}>
-                    <CartesianGrid
-                      strokeDasharray="3 3"
-                      stroke={isDarkMode ? "#555" : "#ccc"}
-                    />
-                    <XAxis
-                      dataKey="name"
-                      stroke={isDarkMode ? "#ddd" : "#333"}
-                    />
-                    <YAxis stroke={isDarkMode ? "#ddd" : "#333"} />
-                    <Tooltip
-                      contentStyle={{
-                        backgroundColor: isDarkMode ? "#333" : "#fff",
-                        color: isDarkMode ? "#fff" : "#000",
-                      }}
-                    />
-                    <Line
-                      type="monotone"
-                      dataKey="revenue"
-                      stroke="#3b82f6"
-                      strokeWidth={3}
-                    />
-                  </LineChart>
-                </ResponsiveContainer>
-              )}
-            </CardContent>
-          </Card>
-        </motion.div>
+          {/* Overview Cards */}
+          {["Total Revenue", "Total Transactions", "New Customers"].map(
+            (title, index) => (
+              <motion.div key={index} whileHover={{ scale: 1.05 }}>
+                <Card className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-6 rounded-lg shadow-md">
+                  <CardHeader>
+                    <CardTitle>{title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex items-center justify-between">
+                    {index === 0 ? (
+                      <FiDollarSign size={32} className="text-green-500" />
+                    ) : index === 1 ? (
+                      <FiTrendingUp size={32} className="text-blue-500" />
+                    ) : (
+                      <FiUsers size={32} className="text-yellow-500" />
+                    )}
+                    <span className="text-xl sm:text-2xl font-semibold bg-gradient-to-r from-green-500 via-blue-500 to-purple-600 text-transparent bg-clip-text">
+                      {loading
+                        ? "Loading..."
+                        : index === 2
+                        ? newCustomers
+                        : "₦12,500,000"}
+                    </span>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            )
+          )}
 
-        {/* DAILY TRANSACTIONS CHART */}
-        <motion.div className="col-span-1" whileHover={{ scale: 1.02 }}>
-          <Card className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-6 rounded-lg shadow-md">
-            <CardHeader>
-              <CardTitle>Daily Transactions</CardTitle>
-            </CardHeader>
-            <CardContent>
-              {loading ? (
-                <div className="h-40 bg-gray-300 dark:bg-gray-700 animate-pulse rounded-md" />
-              ) : (
-                <ResponsiveContainer width="100%" height={250}>
-                  <BarChart data={transactionsData}>
-                    <CartesianGrid
-                      strokeDasharray="3 3"
-                      stroke={isDarkMode ? "#555" : "#ccc"}
-                    />
-                    <XAxis
-                      dataKey="name"
-                      stroke={isDarkMode ? "#ddd" : "#333"}
-                    />
-                    <YAxis stroke={isDarkMode ? "#ddd" : "#333"} />
-                    <Tooltip
-                      contentStyle={{
-                        backgroundColor: isDarkMode ? "#333" : "#fff",
-                        color: isDarkMode ? "#fff" : "#000",
-                      }}
-                    />
-                    <Bar dataKey="transactions" fill="#f97316" />
-                  </BarChart>
-                </ResponsiveContainer>
-              )}
-            </CardContent>
-          </Card>
-        </motion.div>
-
-        {/* Top Performing Services Pie Chart */}
-        <motion.div className="col-span-1" whileHover={{ scale: 1.02 }}>
-          <Card className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-6 rounded-lg shadow-md">
-            <CardHeader>
-              <CardTitle>Top Performing Services</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ResponsiveContainer width="100%" height={250}>
-                <PieChart>
-                  <Pie
-                    data={servicesData}
-                    dataKey="value"
-                    cx="50%"
-                    cy="50%"
-                    outerRadius={80}
-                    label
-                  >
-                    {servicesData.map((entry, index) => (
-                      <Cell
-                        key={`cell-${index}`}
-                        fill={COLORS[index % COLORS.length]}
+          {/* Charts Section */}
+          <motion.div
+            className="col-span-1 sm:col-span-2"
+            whileHover={{ scale: 1.02 }}
+          >
+            <Card className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-6 rounded-lg shadow-md">
+              <CardHeader>
+                <CardTitle>Revenue Growth</CardTitle>
+              </CardHeader>
+              <CardContent>
+                {loading ? (
+                  <div className="h-40 bg-gray-300 dark:bg-gray-700 animate-pulse rounded-md" />
+                ) : (
+                  <ResponsiveContainer width="100%" height={250}>
+                    <LineChart data={revenueData}>
+                      <CartesianGrid
+                        strokeDasharray="3 3"
+                        stroke={isDarkMode ? "#555" : "#ccc"}
                       />
-                    ))}
-                  </Pie>
-                </PieChart>
-              </ResponsiveContainer>
-            </CardContent>
-          </Card>
-        </motion.div>
-
-        {/* Device & Platform Usage */}
-        <motion.div className="col-span-1" whileHover={{ scale: 1.02 }}>
-          <Card className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-6 rounded-lg shadow-md">
-            <CardHeader>
-              <CardTitle>Device & Platform Usage</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ResponsiveContainer width="100%" height={250}>
-                <PieChart>
-                  <Pie
-                    data={deviceData}
-                    dataKey="value"
-                    cx="50%"
-                    cy="50%"
-                    outerRadius={80}
-                    label
-                  >
-                    {deviceData.map((entry, index) => (
-                      <Cell
-                        key={`cell-${index}`}
-                        fill={COLORS[index % COLORS.length]}
+                      <XAxis
+                        dataKey="name"
+                        stroke={isDarkMode ? "#ddd" : "#333"}
                       />
-                    ))}
-                  </Pie>
-                </PieChart>
-              </ResponsiveContainer>
-            </CardContent>
-          </Card>
-        </motion.div>
+                      <YAxis stroke={isDarkMode ? "#ddd" : "#333"} />
+                      <Tooltip
+                        contentStyle={{
+                          backgroundColor: isDarkMode ? "#333" : "#fff",
+                          color: isDarkMode ? "#fff" : "#000",
+                        }}
+                      />
+                      <Line
+                        type="monotone"
+                        dataKey="revenue"
+                        stroke="#3b82f6"
+                        strokeWidth={3}
+                      />
+                    </LineChart>
+                  </ResponsiveContainer>
+                )}
+              </CardContent>
+            </Card>
+          </motion.div>
 
-        {/* User Growth Chart */}
-        {/* User Growth Chart */}
-        <motion.div className="col-span-1" whileHover={{ scale: 1.02 }}>
-          <Card className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-6 rounded-lg shadow-md">
-            <CardHeader>
-              <CardTitle>User Growth</CardTitle>
-            </CardHeader>
-            <CardContent>
-              {loading ? (
-                <div className="h-40 bg-gray-300 dark:bg-gray-700 animate-pulse rounded-md" />
-              ) : (
+          {/* DAILY TRANSACTIONS CHART */}
+          <motion.div className="col-span-1" whileHover={{ scale: 1.02 }}>
+            <Card className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-6 rounded-lg shadow-md">
+              <CardHeader>
+                <CardTitle>Daily Transactions</CardTitle>
+              </CardHeader>
+              <CardContent>
+                {loading ? (
+                  <div className="h-40 bg-gray-300 dark:bg-gray-700 animate-pulse rounded-md" />
+                ) : (
+                  <ResponsiveContainer width="100%" height={250}>
+                    <BarChart data={transactionsData}>
+                      <CartesianGrid
+                        strokeDasharray="3 3"
+                        stroke={isDarkMode ? "#555" : "#ccc"}
+                      />
+                      <XAxis
+                        dataKey="name"
+                        stroke={isDarkMode ? "#ddd" : "#333"}
+                      />
+                      <YAxis stroke={isDarkMode ? "#ddd" : "#333"} />
+                      <Tooltip
+                        contentStyle={{
+                          backgroundColor: isDarkMode ? "#333" : "#fff",
+                          color: isDarkMode ? "#fff" : "#000",
+                        }}
+                      />
+                      <Bar dataKey="transactions" fill="#f97316" />
+                    </BarChart>
+                  </ResponsiveContainer>
+                )}
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          {/* Top Performing Services Pie Chart */}
+          <motion.div className="col-span-1" whileHover={{ scale: 1.02 }}>
+            <Card className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-6 rounded-lg shadow-md">
+              <CardHeader>
+                <CardTitle>Top Performing Services</CardTitle>
+              </CardHeader>
+              <CardContent>
                 <ResponsiveContainer width="100%" height={250}>
-                  <LineChart data={userGrowth}>
-                    <CartesianGrid
-                      strokeDasharray="3 3"
-                      stroke={isDarkMode ? "#555" : "#ccc"}
-                    />
-                    <XAxis
-                      dataKey="name"
-                      stroke={isDarkMode ? "#ddd" : "#333"}
-                    />
-                    <YAxis stroke={isDarkMode ? "#ddd" : "#333"} />
-                    <Tooltip
-                      contentStyle={{
-                        backgroundColor: isDarkMode ? "#333" : "#fff",
-                        color: isDarkMode ? "#fff" : "#000",
-                      }}
-                    />
-                    <Line
-                      type="monotone"
-                      dataKey="users"
-                      stroke="#3b82f6"
-                      strokeWidth={3}
-                    />
-                  </LineChart>
+                  <PieChart>
+                    <Pie
+                      data={servicesData}
+                      dataKey="value"
+                      cx="50%"
+                      cy="50%"
+                      outerRadius={80}
+                      label
+                    >
+                      {servicesData.map((entry, index) => (
+                        <Cell
+                          key={`cell-${index}`}
+                          fill={COLORS[index % COLORS.length]}
+                        />
+                      ))}
+                    </Pie>
+                  </PieChart>
                 </ResponsiveContainer>
-              )}
-            </CardContent>
-          </Card>
-        </motion.div>
-        {/* <motion.div className="col-span-1" whileHover={{ scale: 1.02 }}>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          {/* Device & Platform Usage */}
+          <motion.div className="col-span-1" whileHover={{ scale: 1.02 }}>
+            <Card className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-6 rounded-lg shadow-md">
+              <CardHeader>
+                <CardTitle>Device & Platform Usage</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ResponsiveContainer width="100%" height={250}>
+                  <PieChart>
+                    <Pie
+                      data={deviceData}
+                      dataKey="value"
+                      cx="50%"
+                      cy="50%"
+                      outerRadius={80}
+                      label
+                    >
+                      {deviceData.map((entry, index) => (
+                        <Cell
+                          key={`cell-${index}`}
+                          fill={COLORS[index % COLORS.length]}
+                        />
+                      ))}
+                    </Pie>
+                  </PieChart>
+                </ResponsiveContainer>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          {/* User Growth Chart */}
+          {/* User Growth Chart */}
+          <motion.div className="col-span-1" whileHover={{ scale: 1.02 }}>
+            <Card className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-6 rounded-lg shadow-md">
+              <CardHeader>
+                <CardTitle>User Growth</CardTitle>
+              </CardHeader>
+              <CardContent>
+                {loading ? (
+                  <div className="h-40 bg-gray-300 dark:bg-gray-700 animate-pulse rounded-md" />
+                ) : (
+                  <ResponsiveContainer width="100%" height={250}>
+                    <LineChart data={userGrowth}>
+                      <CartesianGrid
+                        strokeDasharray="3 3"
+                        stroke={isDarkMode ? "#555" : "#ccc"}
+                      />
+                      <XAxis
+                        dataKey="name"
+                        stroke={isDarkMode ? "#ddd" : "#333"}
+                      />
+                      <YAxis stroke={isDarkMode ? "#ddd" : "#333"} />
+                      <Tooltip
+                        contentStyle={{
+                          backgroundColor: isDarkMode ? "#333" : "#fff",
+                          color: isDarkMode ? "#fff" : "#000",
+                        }}
+                      />
+                      <Line
+                        type="monotone"
+                        dataKey="users"
+                        stroke="#3b82f6"
+                        strokeWidth={3}
+                      />
+                    </LineChart>
+                  </ResponsiveContainer>
+                )}
+              </CardContent>
+            </Card>
+          </motion.div>
+          {/* <motion.div className="col-span-1" whileHover={{ scale: 1.02 }}>
         <Card className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-6 rounded-lg shadow-md">
           <CardHeader>
             <CardTitle>User Growth</CardTitle>
@@ -364,46 +376,47 @@ const DashboardContent = () => {
         </Card>
       </motion.div> */}
 
-        {/* Referral Tracker Chart */}
-        <motion.div className="col-span-1" whileHover={{ scale: 1.02 }}>
-          <Card className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-6 rounded-lg shadow-md">
-            <CardHeader>
-              <CardTitle>Referral Tracker</CardTitle>
-            </CardHeader>
-            <CardContent>
-              {loading ? (
-                <div className="h-40 bg-gray-300 dark:bg-gray-700 animate-pulse rounded-md" />
-              ) : (
-                <ResponsiveContainer width="100%" height={250}>
-                  <BarChart data={referralData}>
-                    <CartesianGrid
-                      strokeDasharray="3 3"
-                      stroke={isDarkMode ? "#555" : "#ccc"}
-                    />
-                    <XAxis
-                      dataKey="month"
-                      stroke={isDarkMode ? "#ddd" : "#333"}
-                    />
-                    <YAxis stroke={isDarkMode ? "#ddd" : "#333"} />
-                    <Tooltip
-                      contentStyle={{
-                        backgroundColor: isDarkMode ? "#333" : "#fff",
-                        color: isDarkMode ? "#fff" : "#000",
-                      }}
-                    />
-                    <Bar
-                      dataKey="referrals"
-                      fill="#f59e0b"
-                      radius={[5, 5, 0, 0]}
-                    />
-                  </BarChart>
-                </ResponsiveContainer>
-              )}
-            </CardContent>
-          </Card>
+          {/* Referral Tracker Chart */}
+          <motion.div className="col-span-1" whileHover={{ scale: 1.02 }}>
+            <Card className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-6 rounded-lg shadow-md">
+              <CardHeader>
+                <CardTitle>Referral Tracker</CardTitle>
+              </CardHeader>
+              <CardContent>
+                {loading ? (
+                  <div className="h-40 bg-gray-300 dark:bg-gray-700 animate-pulse rounded-md" />
+                ) : (
+                  <ResponsiveContainer width="100%" height={250}>
+                    <BarChart data={referralData}>
+                      <CartesianGrid
+                        strokeDasharray="3 3"
+                        stroke={isDarkMode ? "#555" : "#ccc"}
+                      />
+                      <XAxis
+                        dataKey="month"
+                        stroke={isDarkMode ? "#ddd" : "#333"}
+                      />
+                      <YAxis stroke={isDarkMode ? "#ddd" : "#333"} />
+                      <Tooltip
+                        contentStyle={{
+                          backgroundColor: isDarkMode ? "#333" : "#fff",
+                          color: isDarkMode ? "#fff" : "#000",
+                        }}
+                      />
+                      <Bar
+                        dataKey="referrals"
+                        fill="#f59e0b"
+                        radius={[5, 5, 0, 0]}
+                      />
+                    </BarChart>
+                  </ResponsiveContainer>
+                )}
+              </CardContent>
+            </Card>
+          </motion.div>
         </motion.div>
       </motion.div>
-    </>
+    </section>
   );
 };
 

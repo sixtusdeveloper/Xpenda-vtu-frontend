@@ -35,11 +35,9 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   if (!isLoaded) {
     return (
       <div className="h-screen flex justify-center flex-col items-center text-center">
-        <PulseLoader color="#4A90E2" size={30} />
+        <ClipLoader color="#4A90E2" size={50} />
 
-        <span className="text-base py-2 sm:text-lg">
-          Checking authentication...
-        </span>
+        <span className="text-sm pt-4 sm:text-base">Please wait...</span>
       </div>
     );
   }
