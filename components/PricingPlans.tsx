@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { Button } from "@/components/ui/button";
 import { pricingData } from "@/data/pricing";
 
 const PricingPlans = () => {
