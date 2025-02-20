@@ -36,7 +36,7 @@ const FundWallet = () => {
       <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-green-500 via-blue-500 to-purple-600 text-transparent bg-clip-text">
         Fund Wallet
       </h2>
-      <p className="text-gray-600 dark:text-gray-300 text-lg mb-8">
+      <p className="text-gray-600 dark:text-gray-300 text-base lg:text-base mb-8">
         Securely add funds to your wallet using the safest and most advanced
         payment methods.
       </p>

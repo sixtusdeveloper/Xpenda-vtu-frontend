@@ -3,3 +3,8 @@ export const validatePhoneNumber = (phoneNumber: string): boolean => {
     return phoneRegex.test(phoneNumber);
   };
   
+  export const validateSmartCardNumber = (smartCardNumber: string): boolean => {
+    const smartCardRegex = /^\d{10,11}$/; // Allows only 10-11 digits
+    return smartCardRegex.test(smartCardNumber);
+  };
+  

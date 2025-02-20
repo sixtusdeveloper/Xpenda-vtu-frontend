@@ -44,9 +44,9 @@ const AirtimeDashboard = () => {
       <h2 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-center">
         Buy Airtime
       </h2>
-      <p className="text-gray-600 dark:text-gray-300 text-base py-2 text-center mb-6">
+      <p className="text-gray-600 dark:text-gray-300 text-sm py-2 text-center mb-6">
         Select your network, enter your phone number, and purchase airtime
-        instantly.
+        instantly and it will be delivered to your phone number.
       </p>
 
       {/* Network Selection */}
@@ -54,14 +54,21 @@ const AirtimeDashboard = () => {
         <label className="text-gray-700 dark:text-gray-300 font-semibold">
           Select Network
         </label>
-        <Select onChange={(e) => setSelectedNetwork(e.target.value)}>
-          <SelectItem value="">Choose Network</SelectItem>
-          {networks.map((network) => (
-            <SelectItem key={network.id} value={network.name}>
-              {network.name}
-            </SelectItem>
-          ))}
-        </Select>
+        <div className="text-sm">
+          <Select
+            onChange={(e) => setSelectedNetwork(e.target.value)}
+            className="border-gray-300 dark:border-gray-600 focus:border-yellow-500 dark:focus:border-yellow-400 
+            focus:ring focus:ring-yellow-400 dark:focus:ring-yellow-500 
+            rounded-lg shadow-sm transition duration-300"
+          >
+            <SelectItem value="">Choose Network</SelectItem>
+            {networks.map((network) => (
+              <SelectItem key={network.id} value={network.name}>
+                {network.name}
+              </SelectItem>
+            ))}
+          </Select>
+        </div>
       </div>
 
       {/* Phone Number Input */}
@@ -103,6 +110,13 @@ const AirtimeDashboard = () => {
       >
         Purchase Airtime
       </Button>
+      <p className="text-sm text-semibold text-center mt-4 text-gray-600 dark:text-gray-300">
+        To enjoy 2.5% discounts on airtime, kindly{" "}
+        <a href="/dashboard/reseller" className="text-blue-500 hover:underline">
+          Upgrade to Reseller.
+        </a>{" "}
+        API Users get even higher discounts.{" "}
+      </p>
     </motion.div>
   );
 };
