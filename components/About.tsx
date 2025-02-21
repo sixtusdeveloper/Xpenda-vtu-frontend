@@ -87,7 +87,7 @@ const About = () => {
           <h1 className="text-left md:text-center text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text mb-2 md:mb-6">
             About <span className="text-yellow-600">Xpenda</span>
           </h1>
-          <p className="text-lg mt-4 text-left md:text-center">
+          <p className="text-sm md:text-base mt-4 text-left md:text-center">
             Empowering businesses and individuals with seamless, secure, and
             affordable VTU services.
           </p>
@@ -128,23 +128,24 @@ const About = () => {
           </h2>
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             {/* Vision */}
-            <div className="p-8 bg-gray-900 rounded-lg shadow-lg text-left">
+            <div className="p-8 bg-gray-900 rounded-none shadow-lg text-left">
               <h2 className="text-yellow-400 text-2xl font-bold mb-4">
                 🌟 Our Vision
               </h2>
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-300 leading-7 text-sm md:text-base">
                 To become the <strong>leading digital VTU platform</strong> in
                 Africa, providing seamless transactions and business
-                opportunities for individuals and entrepreneurs.
+                opportunities for individuals and entrepreneurs that are{" "}
+                <strong>secure, reliable, and affordable</strong>.
               </p>
             </div>
 
             {/* Mission */}
-            <div className="p-8 bg-gray-900 rounded-lg shadow-lg text-left">
+            <div className="p-8 bg-gray-900 rounded-none shadow-lg text-left">
               <h2 className="text-yellow-400 text-2xl font-bold mb-4">
                 🚀 Our Mission
               </h2>
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-300 leading-7 text-sm md:text-base">
                 At Xpenda, we are committed to{" "}
                 <strong>empowering businesses and individuals</strong> by
                 offering <strong>xfast, secure, and affordable</strong> VTU
@@ -161,7 +162,7 @@ const About = () => {
             Why Choose Xpenda?
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-900 p-6 rounded-lg shadow-lg">
+            <div className="bg-gray-900 p-6 rounded-none shadow-lg">
               <h3 className="text-yellow-400 text-xl font-semibold">
                 🌍 Accessibility
               </h3>
@@ -169,7 +170,7 @@ const About = () => {
                 Available 24/7 with seamless transactions nationwide.
               </p>
             </div>
-            <div className="bg-gray-900 p-6 rounded-lg shadow-lg">
+            <div className="bg-gray-900 p-6 rounded-none shadow-lg">
               <h3 className="text-yellow-400 text-xl font-semibold">
                 🔒 Security
               </h3>
@@ -178,7 +179,7 @@ const About = () => {
                 encryption.
               </p>
             </div>
-            <div className="bg-gray-900 p-6 rounded-lg shadow-lg">
+            <div className="bg-gray-900 p-6 rounded-none shadow-lg">
               <h3 className="text-yellow-400 text-xl font-semibold">
                 ⚡ Speed
               </h3>
@@ -186,7 +187,7 @@ const About = () => {
                 Instant top-ups and payments with no delays.
               </p>
             </div>
-            <div className="bg-gray-900 p-6 rounded-lg shadow-lg">
+            <div className="bg-gray-900 p-6 rounded-none shadow-lg">
               <h3 className="text-yellow-400 text-xl font-semibold">
                 💰 Affordability
               </h3>
@@ -206,7 +207,7 @@ const About = () => {
             Getting started is easy. Just follow these simple steps:
           </p>
           <div className="grid md:grid-cols-3 gap-8 mt-8">
-            <div className="bg-gray-900 p-6 rounded-lg shadow-lg text-left">
+            <div className="bg-gray-900 p-6 rounded-none shadow-lg text-left">
               <h3 className="text-yellow-400 text-xl font-semibold">
                 1️⃣ Sign Up
               </h3>
@@ -214,7 +215,7 @@ const About = () => {
                 Create an account in seconds.
               </p>
             </div>
-            <div className="bg-gray-900 p-6 rounded-lg shadow-lg text-left">
+            <div className="bg-gray-900 p-6 rounded-none shadow-lg text-left">
               <h3 className="text-yellow-400 text-xl font-semibold">
                 2️⃣ Fund Wallet
               </h3>
@@ -222,7 +223,7 @@ const About = () => {
                 Add money to your wallet securely.
               </p>
             </div>
-            <div className="bg-gray-900 p-6 rounded-lg shadow-lg text-left">
+            <div className="bg-gray-900 p-6 rounded-none shadow-lg text-left">
               <h3 className="text-yellow-400 text-xl font-semibold">
                 3️⃣ Start Transacting
               </h3>
@@ -248,7 +249,7 @@ const About = () => {
           <button
             type="button"
             onClick={openModal}
-            className="mt-4 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:scale-105 text-white text-lg h-12 px-6 py-3 rounded-lg"
+            className="mt-4 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:scale-105 text-white text-base h-12 px-6 py-3 rounded-none font-semibold"
           >
             Get Started
           </button>
@@ -281,13 +282,13 @@ const About = () => {
               <div className="flex justify-between">
                 <button
                   onClick={handleLoggedInClick}
-                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md w-[48%]"
+                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-none w-[48%]"
                 >
                   I've Logged in
                 </button>
 
                 <button
-                  className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md w-[48%]"
+                  className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-none w-[48%]"
                   onClick={handleLoginClick}
                 >
                   Let me log in
@@ -323,7 +324,7 @@ const About = () => {
               </p>
               <button
                 onClick={() => router.push("/sign-in")}
-                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md w-full"
+                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-none w-full"
               >
                 Log in Now
               </button>
@@ -355,7 +356,7 @@ const About = () => {
               </p>
               <button
                 onClick={() => router.push("/dashboard")}
-                className="font-sans bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-600 text-white text-sm tracking-wide block px-4 py-2 rounded-md w-full"
+                className="bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-600 text-white text-sm tracking-wide block px-4 py-2 rounded-none w-full"
               >
                 Go to dashboard page
               </button>

@@ -39,7 +39,7 @@ const FAQPage = () => {
           Welcome to my FAQ page! Here you can find answers to the most common
           questions about my platform.
         </p>
-        <div className="rounded-xl border p-2 md:p-6 shadow-lg">
+        <div className="rounded-none border p-2 md:p-6 shadow-lg">
           {faqs.map((faq, index) => (
             <div key={index} className="border-b">
               <div
@@ -76,13 +76,13 @@ const FAQPage = () => {
           </h2>
           <div className="flex py-4 justify-center items-center gap-6">
             <button
-              className="bg-gradient-to-r from-blue-500 via-purple-500 to-purple-600 hover:scale-105 text-white text-lg h-12 px-6 py-3 rounded-lg"
+              className="bg-gradient-to-r from-blue-500 via-purple-500 to-purple-600 hover:scale-105 text-white text-base font-semibold h-12 px-6 py-3 rounded-none"
               onClick={() => handleFeedback("yes")}
             >
               Yes, they were
             </button>
             <button
-              className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:scale-105 text-white text-lg h-12 px-6 py-3 rounded-lg"
+              className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:scale-105 text-white text-base font-semibold h-12 px-6 py-3 rounded-none"
               onClick={() => handleFeedback("no")}
             >
               No, they weren't

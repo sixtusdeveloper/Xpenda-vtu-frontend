@@ -18,12 +18,12 @@ const WalletSection = () => {
           <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text">
             Secure, Reliable & Fast Digital Wallet
           </h2>
-          <p className="text-lg mt-4">
+          <p className="text-sm md:text-base mt-4">
             Fund your wallet and make seamless transactions with ease. Buy data,
             airtime, and pay bills directly from your Xpenda wallet with instant
             processing.
           </p>
-          <ul className="mt-6 space-y-2">
+          <ul className="mt-6 space-y-2 text-sm md:text-md">
             <li>✔️ Instant funding & withdrawals</li>
             <li>✔️ Secure transactions</li>
             <li>✔️ Track your spending easily</li>
@@ -32,7 +32,7 @@ const WalletSection = () => {
             <button
               type="button"
               onClick={navigateToWallet}
-              className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-lg"
+              className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-none"
             >
               Go to Wallet
             </button>

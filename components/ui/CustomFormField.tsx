@@ -35,7 +35,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
           <Input
             placeholder={placeholder}
             {...field}
-            className="shad-input px-4 py-3"
+            className="shad-input px-4 py-3 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </FormControl>
       );
@@ -45,7 +45,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
           <Textarea
             placeholder={placeholder}
             {...field}
-            className="shad-textArea"
+            className="shad-textArea rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500"
             disabled={props.disabled}
           />
         </FormControl>

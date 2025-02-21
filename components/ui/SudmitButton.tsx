@@ -14,7 +14,7 @@ const SubmitButton = ({ isLoading, className, children }: ButtonProps) => {
       disabled={isLoading}
       className={
         className ??
-        "w-full h-12 px-4 py-3 cursor-pointer text-base rounded-mdw-full bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-white font-semibold"
+        "w-full h-12 px-4 py-3 cursor-pointer text-base rounded-none bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-white font-semibold"
       }
     >
       {isLoading ? (

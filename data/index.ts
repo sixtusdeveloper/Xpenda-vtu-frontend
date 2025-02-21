@@ -38,3 +38,10 @@ export const ServicesNavigation = [
     { name: "Start Earning", href: "#earnings" },
   ];
   
+  
+//============================= Xpenda Services page Navigation Links ============================//
+export const ContactNavigation = [
+    { name: "Contact Us", href: "#contact-us" },
+    { name: "Our Location", href: "#our-location" },
+  ];
+  

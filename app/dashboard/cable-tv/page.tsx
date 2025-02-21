@@ -14,23 +14,52 @@ const CableTVDashboard = () => {
   const [selectedPackage, setSelectedPackage] = useState("");
   const [error, setError] = useState("");
 
-  const handlePurchase = () => {
-    if (!selectedProvider) {
+  const [loading, setLoading] = useState(false);
+
+  const handlePurchase = async () => {
+    setError(""); // Reset error state
+
+    // Trim values to prevent whitespace issues
+    const provider = selectedProvider.trim();
+    const smartCard = smartCardNumber.trim();
+    const packageName = selectedPackage.trim();
+
+    // Validation checks
+    if (!provider) {
       setError("Please select a Cable TV provider.");
       return;
     }
-    if (!validateSmartCardNumber(smartCardNumber)) {
+    if (!validateSmartCardNumber(smartCard)) {
       setError("Invalid SmartCard/IUC Number.");
       return;
     }
-    if (!selectedPackage) {
+    if (!packageName) {
       setError("Please select a package/bouquet.");
       return;
     }
-    setError("");
-    alert(
-      `Processing Cable TV Subscription: ${selectedPackage} on ${selectedProvider} for SmartCard: ${smartCardNumber}`
-    );
+
+    setLoading(true); // Indicate processing
+
+    try {
+      // Placeholder for future API request
+      // const response = await api.subscribeCableTV({ provider, smartCard, packageName });
+
+      setTimeout(() => {
+        alert(
+          `✅ Subscription successful!\nProvider: ${provider}\nPackage: ${packageName}\nSmartCard: ${smartCard}`
+        );
+
+        // Reset form inputs after successful submission
+        setSelectedProvider("");
+        setSmartCardNumber("");
+        setSelectedPackage("");
+        setError(""); // Clear errors
+        setLoading(false);
+      }, 2000); // Simulating API call
+    } catch (error) {
+      setError("❌ Subscription failed. Please try again.");
+      setLoading(false);
+    }
   };
 
   return (
@@ -55,16 +84,39 @@ const CableTVDashboard = () => {
         </label>
         <div className="text-sm">
           <Select
-            onChange={(e) => setSelectedProvider(e.target.value)}
+            onValueChange={setSelectedProvider}
             value={selectedProvider}
             className="border-gray-300 dark:border-gray-600 focus:border-yellow-500 dark:focus:border-yellow-400 
-                 focus:ring focus:ring-yellow-400 dark:focus:ring-yellow-500 
-                 rounded-lg shadow-sm transition duration-300"
+           focus:ring focus:ring-yellow-400 dark:focus:ring-yellow-500 
+           rounded-lg shadow-sm transition duration-300"
           >
             <SelectItem value="">Choose Provider</SelectItem>
             {providers.map((provider) => (
               <SelectItem key={provider} value={provider}>
                 {provider}
+              </SelectItem>
+            ))}
+          </Select>
+        </div>
+      </div>
+
+      {/* Package/Bouquet Selection */}
+      <div className="mb-4">
+        <label className="text-gray-700 dark:text-gray-300 font-semibold">
+          Choose Package/Bouquet
+        </label>
+        <div className="text-sm">
+          <Select
+            onValueChange={setSelectedPackage}
+            value={selectedPackage}
+            className="border-gray-300 dark:border-gray-600 focus:border-yellow-500 dark:focus:border-yellow-400 
+           focus:ring focus:ring-yellow-400 dark:focus:ring-yellow-500 
+           rounded-lg shadow-sm transition duration-300"
+          >
+            <SelectItem value="">Choose Package</SelectItem>
+            {packages.map((pkg) => (
+              <SelectItem key={pkg} value={pkg}>
+                {pkg}
               </SelectItem>
             ))}
           </Select>
@@ -84,38 +136,19 @@ const CableTVDashboard = () => {
         />
       </div>
 
-      {/* Package/Bouquet Selection */}
-      <div className="mb-4">
-        <label className="text-gray-700 dark:text-gray-300 font-semibold">
-          Choose Package/Bouquet
-        </label>
-        <div className="text-sm">
-          {" "}
-          <Select
-            onChange={(e) => setSelectedPackage(e.target.value)}
-            value={selectedPackage}
-            className="border-gray-300 dark:border-gray-600 focus:border-yellow-500 dark:focus:border-yellow-400 
-                 focus:ring focus:ring-yellow-400 dark:focus:ring-yellow-500 
-                 rounded-lg shadow-sm transition duration-300"
-          >
-            <SelectItem value="">Choose Package</SelectItem>
-            {packages.map((pkg) => (
-              <SelectItem key={pkg} value={pkg}>
-                {pkg}
-              </SelectItem>
-            ))}
-          </Select>
-        </div>
-      </div>
-
       {error && <p className="text-red-500 text-center">{error}</p>}
 
       {/* Subscribe Button */}
       <Button
         onClick={handlePurchase}
-        className="w-full h-12 py-3 mt-4 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-white font-bold text-base rounded-lg shadow-lg hover:opacity-90 transition duration-300"
+        disabled={loading}
+        className={`w-full h-12 py-3 mt-4 font-bold text-base rounded-lg shadow-lg transition duration-300 ${
+          loading
+            ? "bg-gray-400 cursor-not-allowed"
+            : "bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-white hover:opacity-90"
+        }`}
       >
-        Subscribe Now
+        {loading ? "Processing..." : "Subscribe Now"}
       </Button>
       <p className="text-sm text-semibold text-center mt-4 text-gray-600 dark:text-gray-300">
         To enjoy 0.5% discounts and ₦0.00 service fees on cable TV, kindly{" "}

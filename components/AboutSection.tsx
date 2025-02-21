@@ -59,13 +59,15 @@ const About = () => {
             </div>
           </div>
 
+          {/* <a href="/about"> */}
           <button
             type="button"
             onClick={navigateToAbout}
-            className="mt-6 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-lg"
+            className="mt-6 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-none"
           >
             Learn More
           </button>
+          {/* </a> */}
         </div>
 
         {/* Right Side - Image */}

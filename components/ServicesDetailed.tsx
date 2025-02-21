@@ -68,7 +68,9 @@ const ServiceDetails = () => {
           >
             <div className="flex justify-center mb-4">{service.icon}</div>
             <h3 className="text-2xl font-semibold">{service.title}</h3>
-            <p className="mt-2 text-sm opacity-90">{service.details}</p>
+            <p className="mt-2 text-sm opacity-90 leading-snug">
+              {service.details}
+            </p>
           </div>
         ))}
       </div>

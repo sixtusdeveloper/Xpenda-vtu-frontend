@@ -6,118 +6,186 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-10">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
+        {/* QUICK LINKS */}
         {/* BRANDING */}
         <div>
-          <Image src="/logo.png" alt="Xpenda Logo" width={80} height={30} />
-          <p className="mt-4 text-sm text-gray-400">
-            <strong>Xpenda</strong> is your trusted platform for{" "}
-            <strong>buying and reselling</strong>&nbsp; Airtime, Data, and
-            Utility Payments in Nigeria.
+          <h3 className="text-base font-bold mb-4">About Xpenda</h3>
+          <p className="text-left md:text-left text-sm mb-2 text-gray-400 leading-7">
+            Xpenda is a trusted <strong> Top-Up (VTU) platform </strong>Virtual
+            providing seamless transactions for{" "}
+            <strong>airtime, data, bills, and subscriptions</strong> at
+            unbeatable rates. We empower individuals and businesses to{" "}
+            <strong>buy, sell, and automate transactions</strong> securely and
+            efficiently.
           </p>
         </div>
 
-        {/* QUICK LINKS */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-          <ul className="space-y-2">
+          <h3 className="text-base font-bold mb-4">Quick Links</h3>
+          <ul className="space-y-2 text-sm ">
             <li>
-              <Link href="/" className="text-gray-300 hover:text-yellow-400">
+              <a
+                href="/"
+                className="text-gray-300 hover:text-yellow-400 border-b border-gray-800 py-2 leading-6"
+              >
                 Home
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
+              <a
                 href="/about"
-                className="text-gray-300 hover:text-yellow-400"
+                className="text-gray-300 hover:text-yellow-400 border-b border-gray-800 py-2 leading-6"
               >
                 About Us
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
+              <a
                 href="/services"
-                className="text-gray-300 hover:text-yellow-400"
+                className="text-gray-300 hover:text-yellow-400 border-b border-gray-800 py-2 leading-6"
               >
                 Services
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
+              <a
                 href="/pricing"
-                className="text-gray-300 hover:text-yellow-400"
+                className="text-gray-300 hover:text-yellow-400 border-b border-gray-800 py-2 leading-6"
               >
                 Pricing
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
+              <a
                 href="/contact"
-                className="text-gray-300 hover:text-yellow-400"
+                className="text-gray-300 hover:text-yellow-400 border-b border-gray-800 py-2 leading-6"
               >
                 Contact
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
 
         {/* SERVICES */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Our Services</h3>
+          <h3 className="text-base font-bold mb-4">Our Services</h3>
           <ul className="space-y-2">
-            <li className="text-gray-300">Airtime & Data Reselling</li>
-            <li className="text-gray-300">Electricity Bill Payment</li>
-            <li className="text-gray-300">Cable TV Subscription</li>
-            <li className="text-gray-300">Airtime to Cash Conversion</li>
-            <li className="text-gray-300">Secure API Integration</li>
+            <a href="/dashboard">
+              <li className="text-gray-300 hover:text-yellow-400 border-b border-gray-800 py-2 leading-6 text-sm">
+                Airtime & Data Reselling
+              </li>
+            </a>
+            <a href="/dashboard">
+              <li className="text-gray-300 hover:text-yellow-400 border-b border-gray-800 py-2 leading-6 text-sm">
+                Electricity Bill Payment
+              </li>
+            </a>
+            <a href="/dashboard">
+              <li className="text-gray-300 hover:text-yellow-400 border-b border-gray-800 py-2 leading-6 text-sm">
+                Cable TV Subscription
+              </li>
+            </a>
+            <a href="/dashboard">
+              <li className="text-gray-300 hover:text-yellow-400 border-b border-gray-800 py-2 leading-6 text-sm">
+                Airtime to Cash Conversion
+              </li>
+            </a>
+            <a href="/dashboard">
+              <li className="text-gray-300 hover:text-yellow-400 border-b border-gray-800 py-2 leading-6 text-sm">
+                Secure API Integration
+              </li>
+            </a>
           </ul>
         </div>
 
         {/* CONTACT & SOCIALS */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Contact & Follow Us</h3>
-          <p className="text-sm text-gray-400">
+          <h3 className="text-base font-bold mb-4">Contact & Follow Us</h3>
+          <p className="text-sm text-gray-400 leading-7 border-b py-2 border-gray-800">
             📍 Plot 39 Awolowo Road, Ikoyi, Lagos, Nigeria
           </p>
-          <p className="text-sm text-gray-400">📞 +234 902 204 8105</p>
-          <p className="text-sm text-gray-400">✉ contact@sixtusdev.net</p>
-
-          {/* SOCIAL MEDIA ICONS */}
-          <div className="flex gap-4 mt-4">
-            <a href="#" className="text-gray-300 hover:text-yellow-400 text-xl">
-              <FaFacebook />
-            </a>
-            <a href="#" className="text-gray-300 hover:text-yellow-400 text-xl">
-              <FaTwitter />
-            </a>
-            <a href="#" className="text-gray-300 hover:text-yellow-400 text-xl">
-              <FaInstagram />
-            </a>
-            <a href="#" className="text-gray-300 hover:text-yellow-400 text-xl">
-              <FaLinkedin />
-            </a>
-          </div>
+          <p className="text-sm text-gray-400 leading-7 border-b py-2 border-gray-800">
+            📞 +234 902 204 8105
+          </p>
+          <p className="text-sm text-gray-400 leading-7 border-b py-2 border-gray-800">
+            ✉ contact@sixtusdev.net
+          </p>
         </div>
       </div>
 
       {/* COPYRIGHT SECTION */}
-      <div className="border-t border-gray-800 mt-8 pt-6 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} Xpenda VTU. Developed by Sixtusdev. All
-        rights reserved.
-        <span className="block mt-2">
-          <Link
-            href="/terms"
-            className="text-yellow-400 hover:underline text-sm"
+      <div className="flex justify-between flex-wrap px-4 sm:px-8 items-center gap-4 border-t border-gray-800 mt-8 pt-6 text-sm text-gray-500">
+        <a href="/" className="-m-1.5 p-1.5 flex justify-center items-center">
+          <Image
+            src="/logo.png"
+            alt="Xpenda Logo"
+            width={55}
+            height={55}
+            style={{ width: "auto", height: "auto" }}
+            priority={true}
+          />
+          <span className="self-center font-sans text-base font-bold bg-gradient-to-r from-blue-500 via-yellow-500 to-pink-500 uppercase text-transparent bg-clip-text">
+            XPENDA
+          </span>
+        </a>
+
+        {/* SOCIAL MEDIA ICONS */}
+        <div className="flex gap-4">
+          <a
+            href="#"
+            className="text-gray-300 hover:text-yellow-400 text-lg  bg-gray-700 p-2 rounded-full"
           >
-            Terms & Conditions
-          </Link>{" "}
-          |
-          <Link
-            href="/privacy"
-            className="text-yellow-400 hover:underline ml-2 text-sm"
+            <FaFacebook />
+          </a>
+          <a
+            href="#"
+            className="text-gray-300 hover:text-yellow-400 text-lg  bg-gray-700 p-2 rounded-full"
           >
-            Privacy Policy
-          </Link>
-        </span>
+            <FaTwitter />
+          </a>
+          <a
+            href="#"
+            className="text-gray-300 hover:text-yellow-400 text-lg  bg-gray-700 p-2 rounded-full"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="#"
+            className="text-gray-300 hover:text-yellow-400 text-lg bg-gray-700 p-2 rounded-full"
+          >
+            <FaLinkedin />
+          </a>
+        </div>
+
+        <div className="flex gap-4">
+          © {new Date().getFullYear()} Xpenda VTU{" "}
+          <span className="block">
+            <Link
+              href="/terms"
+              className="text-yellow-400 hover:underline text-sm"
+            >
+              Terms & Conditions
+            </Link>{" "}
+            |
+            <Link
+              href="/privacy"
+              className="text-yellow-400 hover:underline ml-2 text-sm"
+            >
+              Privacy Policy
+            </Link>
+          </span>{" "}
+          <span>
+            Developed by&nbsp;
+            <a
+              href="https://www.sixtusdev.net"
+              target="_blank"
+              className="text-yellow-500 hover:underline"
+            >
+              Sixtusdev
+            </a>{" "}
+            - All rights reserved.
+          </span>
+        </div>
       </div>
     </footer>
   );

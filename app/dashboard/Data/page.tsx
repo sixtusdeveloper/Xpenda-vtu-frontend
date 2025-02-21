@@ -70,8 +70,8 @@ const DataDashboard = () => {
           <Select
             onChange={(e) => handleNetworkChange(e.target.value)}
             value={selectedNetwork}
-            className="border-gray-300 dark:border-gray-600 focus:border-yellow-500 dark:focus:border-yellow-400 
-                 focus:ring focus:ring-yellow-400 dark:focus:ring-yellow-500 
+            className="border-gray-300 dark:border-gray-600 focus:border-yellow-500 dark:focus:border-yellow-400
+                 focus:ring focus:ring-yellow-400 dark:focus:ring-yellow-500
                  rounded-lg shadow-sm transition duration-300"
           >
             <SelectItem value="">Choose Network</SelectItem>
@@ -93,8 +93,8 @@ const DataDashboard = () => {
           <Select
             onChange={(e) => setSelectedPlan(e.target.value)}
             value={selectedPlan}
-            className="border-gray-300 dark:border-gray-600 focus:border-yellow-500 dark:focus:border-yellow-400 
-                 focus:ring focus:ring-yellow-400 dark:focus:ring-yellow-500 
+            className="border-gray-300 dark:border-gray-600 focus:border-yellow-500 dark:focus:border-yellow-400
+                 focus:ring focus:ring-yellow-400 dark:focus:ring-yellow-500
                  rounded-lg shadow-sm transition duration-300"
           >
             <SelectItem value="">Choose Plan</SelectItem>

@@ -115,7 +115,7 @@ const Home = () => {
 
             {/* Heading */}
             <motion.h1
-              className="text-[2.2rem] leading-tight lg:text-[3rem] font-extrabold font-sans"
+              className="text-[2.2rem] leading-tight lg:text-[2.8rem] font-extrabold"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.9, ease: "easeOut" }}
@@ -163,7 +163,7 @@ const Home = () => {
               <button
                 type="button"
                 onClick={openModal}
-                className="h-12 px-6 py-3 rounded-lg bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-sm md:text-base lg:text-base"
+                className="h-12 px-6 py-3 rounded-none bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-sm md:text-base lg:text-base"
               >
                 Get Started
               </button>
@@ -171,7 +171,7 @@ const Home = () => {
               <button
                 type="button"
                 onClick={navigateToAbout}
-                className="h-12 px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-600 text-white hover:bg-purple-700 font-semibold text-sm md:text-base lg:text-base"
+                className="h-12 px-6 py-3 rounded-none bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-600 text-white hover:bg-purple-700 font-semibold text-sm md:text-base lg:text-base"
               >
                 About Us
               </button>
@@ -211,8 +211,7 @@ const Home = () => {
               Sign in to Access the Dashboard
             </h3>
             <p className="mb-4">
-              You need to be signed in to access the dashboard and it features
-              e-books.
+              You need to be signed in to access the dashboard and it features.
             </p>
             {loadingState ? (
               <div className="flex flex-col items-center">
@@ -223,13 +222,13 @@ const Home = () => {
               <div className="flex justify-between">
                 <button
                   onClick={handleLoggedInClick}
-                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md w-[48%]"
+                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-none w-[48%]"
                 >
                   I've Logged in
                 </button>
 
                 <button
-                  className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md w-[48%]"
+                  className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-none w-[48%]"
                   onClick={handleLoginClick}
                 >
                   Let me log in
@@ -265,7 +264,7 @@ const Home = () => {
               </p>
               <button
                 onClick={() => router.push("/sign-in")}
-                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md w-full"
+                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-none w-full"
               >
                 Log in Now
               </button>
@@ -297,7 +296,7 @@ const Home = () => {
               </p>
               <button
                 onClick={() => router.push("/dashboard")}
-                className="font-sans bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-600 text-white text-sm tracking-wide block px-4 py-2 rounded-md w-full"
+                className="font-sans bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-600 text-white text-sm tracking-wide block px-4 py-2 rounded-none w-full"
               >
                 Go to dashboard page
               </button>

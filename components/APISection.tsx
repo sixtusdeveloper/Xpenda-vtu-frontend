@@ -21,14 +21,14 @@ const APISection = () => {
           <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text">
             Powerful & Secure API Integration
           </h2>
-          <p className="text-lg mt-4">
+          <p className="text-sm md:text-base mt-4">
             Integrate Xpenda’s API to enable{" "}
             <strong>automated airtime, data, and bill payments</strong> on your
             platform. Enjoy{" "}
             <strong>fast, reliable, and secure transactions</strong> with
             seamless API connectivity.
           </p>
-          <ul className="mt-6 space-y-3">
+          <ul className="mt-6 space-y-3 text-sm md:text-base">
             <li className="flex items-center gap-3">
               <Code className="w-6 h-6 text-blue-400" />
               Developer-Friendly REST API
@@ -50,7 +50,7 @@ const APISection = () => {
             <button
               type="button"
               onClick={navigateToDocs} // ✅ Trigger instant navigation on click
-              className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-lg"
+              className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-none shadow-lg transition-all duration-300"
             >
               View API Documentation
             </button>

@@ -55,17 +55,11 @@ const ServicesPage = () => {
         <h1 className="text-3xl md:text-4xl font-extrabold mb-4 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text">
           Our Professional Services
         </h1>
-        <p className="text-base lg:text-base max-w-3xl mx-auto">
+        <p className="text-base lg:text-base max-w-3xl mx-auto leading-snug">
           Xpenda offers secure and reliable digital solutions for airtime, data,
           bill payments, and more. Experience seamless transactions with
           unbeatable rates.
         </p>
-
-        <Link href="/pricing">
-          <button className="mt-6 font-semibold bg-gradient-to-r from-yellow-500 to-pink-500 text-white text-base px-6 py-3 rounded-lg shadow-lg">
-            Our Pricing List
-          </button>
-        </Link>
       </div>
 
       {/* Services Grid */}

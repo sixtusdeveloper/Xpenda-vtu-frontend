@@ -6,11 +6,9 @@ import { pricingData } from "@/data/pricing-lists";
 import { useRouter } from "next/navigation";
 
 const PricingSection = () => {
-  const router = useRouter(); // ✅ Initialize router
-
-  // ✅ Function to handle fast navigation
+  const router = useRouter();
   const navigateToPricing = () => {
-    router.push("/pricing"); // ✅ Instantly navigates without delay
+    router.push("/pricing");
   };
   return (
     <section id="pricing" className="relative py-10 md:py-20 bg-secondary">
@@ -67,7 +65,7 @@ const PricingSection = () => {
           <button
             type="button"
             onClick={navigateToPricing}
-            className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-lg shadow-lg"
+            className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-none shadow-lg"
           >
             See All Pricing
           </button>

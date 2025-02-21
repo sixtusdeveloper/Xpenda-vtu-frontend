@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
 import { ZapIcon, PhoneIcon, TvIcon, DollarSignIcon } from "lucide-react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const services = [
   {
@@ -42,6 +44,10 @@ const services = [
 ];
 
 const ServicesSection = () => {
+  const router = useRouter();
+  const navigateToServices = () => {
+    router.push("/services");
+  };
   return (
     <section id="services" className="py-20 bg-secondary relative">
       <div className="max-w-6xl mx-auto px-6 text-left md:text-center">
@@ -70,11 +76,13 @@ const ServicesSection = () => {
 
         {/* CTA Button */}
         <div className="mt-12">
-          <Link href="/services">
-            <button className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-lg">
-              Read About Our Services
-            </button>
-          </Link>
+          <button
+            type="button"
+            onClick={navigateToServices}
+            className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-none"
+          >
+            Read About Our Services
+          </button>
         </div>
       </div>
     </section>

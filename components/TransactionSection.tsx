@@ -30,13 +30,13 @@ const TransactionSection = () => {
           <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text">
             Secure & Reliable Transactions
           </h2>
-          <p className="text-base md:text-lg mt-4">
+          <p className="text-sm md:text-base mt-4">
             At Xpenda, every transaction is{" "}
             <strong>end-to-end encrypted and fraud-proof</strong>. Your security
             is our priority, ensuring seamless payments with{" "}
             <strong>full protection</strong>.
           </p>
-          <ul className="mt-6 space-y-3">
+          <ul className="mt-6 space-y-3 text-sm md:text-base">
             <li className="flex items-center gap-3">
               <ShieldCheckIcon className="w-6 h-6 text-green-400" />
               Advanced Fraud Protection
@@ -54,7 +54,7 @@ const TransactionSection = () => {
             <button
               type="button"
               onClick={navigateToTransactions}
-              className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-lg"
+              className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-none"
             >
               View Transactions
             </button>

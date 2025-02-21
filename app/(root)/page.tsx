@@ -6,7 +6,6 @@ import ServicesSection from "@/components/ServicesSection";
 import PricingSection from "@/components/PricingSection";
 import WalletSection from "@/components/WalletSection";
 import APISection from "@/components/APISection";
-import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import ScrollIndicator from "@/components/ScrollIndicator";
@@ -23,7 +22,6 @@ export default function Home() {
         <WalletSection />
         <TransactionSection />
         <APISection />
-        <ContactSection />
         <Footer />
         <ScrollIndicator />
       </div>

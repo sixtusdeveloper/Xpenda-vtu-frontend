@@ -3,13 +3,14 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 
 const ReferralProgram = () => {
-  // const router = useRouter();
-  // const navigateToReferral = () => {
-  //   router.push("/dashboard/referral");
-  // };
+  const router = useRouter();
+
+  const navigateToReferral = () => {
+    router.push("/dashboard/referral");
+  };
+
   return (
     <div id="referral" className="bg-secondary py-8">
       <div className="max-w-6xl mx-auto px-6 text-center py-4">
@@ -83,15 +84,14 @@ const ReferralProgram = () => {
         <p className="text-base mt-2">
           Join our referral program and enjoy exclusive rewards.
         </p>
-        <Link href="/dashboard/referral">
-          <button
-            type="button"
-            // onClick={navigateToReferral}
-            className="mt-6 bg-gradient-to-r from-green-500 to-blue-500 text-white text-base px-6 py-3 rounded-lg shadow-lg"
-          >
-            Get Your Referral Link
-          </button>
-        </Link>
+
+        <button
+          type="button"
+          onClick={navigateToReferral}
+          className="mt-6 bg-gradient-to-r from-green-500 to-blue-500 text-white text-base font-semibold px-6 py-3 rounded-none shadow-lg"
+        >
+          Get Your Referral Link
+        </button>
       </div>
     </div>
   );
