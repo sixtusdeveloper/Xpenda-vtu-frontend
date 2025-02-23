@@ -12,7 +12,7 @@ export const Select: React.FC<SelectProps> = ({
     <select
       {...props}
       onChange={(e) => onValueChange?.(e.target.value)} // ✅ Uses onValueChange
-      className="w-full p-2 border rounded-md bg-white dark:bg-gray-800 dark:text-white"
+      className="w-full px-4 py-3 h-12 border rounded-none bg-blue-100 dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
     >
       {children}
     </select>

@@ -8,6 +8,7 @@ import { Select, SelectItem } from "@/components/ui/select";
 import { bettingProviders } from "@/data/betting";
 import SuccessModal from "@/components/ui/SuccessModal";
 import { useUser } from "@clerk/nextjs";
+import { FaExclamationCircle } from "react-icons/fa";
 
 const BettingDashboard = () => {
   const { user } = useUser();
@@ -54,22 +55,26 @@ const BettingDashboard = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="p-6 max-w-lg mx-auto bg-white dark:bg-gray-900 shadow-lg rounded-lg"
+      className="p-6 max-w-lg mx-auto bg-white dark:bg-gray-900 shadow-lg rounded-none"
     >
-      <h2 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-center">
+      <h2 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-left">
         Fund Betting Account
       </h2>
-      <p className="text-gray-600 dark:text-gray-300 text-sm py-2 text-center mb-6">
+      <p className="text-gray-600 dark:text-gray-300 text-sm py-2 text-left mb-4">
         Select your betting provider, enter your customer ID and amount to fund
         your account instantly.
       </p>
 
       <div className="mb-4">
-        <label className="text-gray-700 dark:text-gray-300 font-semibold">
+        <label className="text-gray-700 dark:text-gray-300 font-semibold text-sm mb-2">
           Betting Provider
         </label>
-        <div className="text-sm">
-          <Select value={selectedProvider} onValueChange={setSelectedProvider}>
+        <div className="text-sm rounded-none">
+          <Select
+            value={selectedProvider}
+            onValueChange={setSelectedProvider}
+            className="rounded-none"
+          >
             <SelectItem value="">Choose Provider</SelectItem>
             {bettingProviders.map((provider) => (
               <SelectItem key={provider} value={provider}>
@@ -81,7 +86,7 @@ const BettingDashboard = () => {
       </div>
 
       <div className="mb-4">
-        <label className="text-gray-700 dark:text-gray-300 font-semibold">
+        <label className="text-gray-700 dark:text-gray-300 font-semibold text-sm mb-2">
           Customer ID/User ID
         </label>
         <Input
@@ -89,11 +94,12 @@ const BettingDashboard = () => {
           placeholder="Enter Customer ID"
           value={customerID}
           onChange={(e) => setCustomerID(e.target.value)}
+          className="rounded-none"
         />
       </div>
 
       <div className="mb-4">
-        <label className="text-gray-700 dark:text-gray-300 font-semibold">
+        <label className="text-gray-700 dark:text-gray-300 font-semibold text-sm mb-2">
           Amount (₦)
         </label>
         <Input
@@ -101,15 +107,21 @@ const BettingDashboard = () => {
           placeholder="Enter Amount"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
+          className="rounded-none"
         />
       </div>
 
-      {error && <p className="text-red-500 text-center">{error}</p>}
+      {error && (
+        <p className="flex justify-center gap-2 mx-auto py-3 h-12 text-sm lg:text-base px-4 items-center bg-red-200 text-red-500 text-center">
+          <FaExclamationCircle className="text-red-400" size={18} />
+          {error}
+        </p>
+      )}
 
       <Button
         onClick={handlePurchase}
         disabled={loading}
-        className="w-full h-12 py-3 mt-4 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-white font-bold text-base rounded-lg shadow-lg hover:opacity-90 transition duration-300"
+        className="w-full h-12 py-3 mt-2 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-white font-bold text-base rounded-none shadow-lg hover:opacity-90 transition duration-300"
       >
         {loading ? "Processing..." : "Fund Now"}
       </Button>

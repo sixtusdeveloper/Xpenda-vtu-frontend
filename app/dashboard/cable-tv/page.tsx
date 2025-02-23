@@ -9,6 +9,7 @@ import { validateSmartCardNumber } from "@/lib/utils/validators";
 import { providers, packages } from "@/data/cable-tv";
 import SuccessModal from "@/components/ui/SuccessModal";
 import { useUser } from "@clerk/nextjs";
+import { FaExclamationCircle } from "react-icons/fa";
 
 const CableTVDashboard = () => {
   const { user } = useUser();
@@ -61,7 +62,7 @@ const CableTVDashboard = () => {
         setLoading(false);
       }, 2000); // Simulating API call
     } catch (error) {
-      setError("❌ Subscription failed. Please try again.");
+      setError("Subscription failed. Please try again.");
       setLoading(false);
     }
   };
@@ -72,28 +73,26 @@ const CableTVDashboard = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="p-6 max-w-lg mx-auto bg-white dark:bg-gray-900 shadow-lg rounded-lg"
+        className="p-6 max-w-lg mx-auto bg-white dark:bg-gray-900 shadow-lg rounded-none"
       >
         <h2 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-left">
           Subscribe to Cable TV
         </h2>
-        <p className="text-gray-600 dark:text-gray-300 text-sm py-2 text-left mb-6">
+        <p className="text-gray-600 dark:text-gray-300 text-sm py-2 text-left mb-4">
           Select your provider, enter your SmartCard/IUC number, and choose a
           package to subscribe instantly.
         </p>
 
         {/* Provider Selection */}
         <div className="mb-4">
-          <label className="text-gray-700 dark:text-gray-300 font-semibold">
+          <label className="text-gray-700 dark:text-gray-300 font-semibold text-sm mb-2">
             Choose Cable TV
           </label>
-          <div className="text-sm">
+          <div className="text-sm rounded-none">
             <Select
               onValueChange={setSelectedProvider}
               value={selectedProvider}
-              className="border-gray-300 dark:border-gray-600 focus:border-yellow-500 dark:focus:border-yellow-400 
-             focus:ring focus:ring-yellow-400 dark:focus:ring-yellow-500 
-             rounded-lg shadow-sm transition duration-300"
+              className="rounded-none text-sm"
             >
               <SelectItem value="">Choose Provider</SelectItem>
               {providers.map((provider) => (
@@ -107,16 +106,14 @@ const CableTVDashboard = () => {
 
         {/* Package/Bouquet Selection */}
         <div className="mb-4">
-          <label className="text-gray-700 dark:text-gray-300 font-semibold">
+          <label className="text-gray-700 dark:text-gray-300 font-semibold text-sm mb-2">
             Choose Package/Bouquet
           </label>
-          <div className="text-sm">
+          <div className="text-sm rounded-none">
             <Select
               onValueChange={setSelectedPackage}
               value={selectedPackage}
-              className="border-gray-300 dark:border-gray-600 focus:border-yellow-500 dark:focus:border-yellow-400 
-             focus:ring focus:ring-yellow-400 dark:focus:ring-yellow-500 
-             rounded-lg shadow-sm transition duration-300"
+              className="rounded-none"
             >
               <SelectItem value="">Choose Package</SelectItem>
               {packages.map((pkg) => (
@@ -130,7 +127,7 @@ const CableTVDashboard = () => {
 
         {/* SmartCard/IUC Number Input */}
         <div className="mb-4 relative">
-          <label className="text-gray-700 dark:text-gray-300 font-semibold">
+          <label className="text-gray-700 dark:text-gray-300 font-semibold text-sm mb-2">
             SmartCard/IUC Number
           </label>
           <Input
@@ -138,24 +135,30 @@ const CableTVDashboard = () => {
             placeholder="Enter SmartCard/IUC Number"
             value={smartCardNumber}
             onChange={(e) => setSmartCardNumber(e.target.value)}
+            className="rounded-none"
           />
         </div>
 
-        {error && <p className="text-red-500 text-center">{error}</p>}
+        {error && (
+          <p className="flex justify-center gap-2 mx-auto py-3 h-12 text-sm lg:text-base px-4 items-center bg-red-200 text-red-500 text-center">
+            <FaExclamationCircle className="text-red-400" size={18} />
+            {error}
+          </p>
+        )}
 
         {/* Subscribe Button */}
         <Button
           onClick={handlePurchase}
           disabled={loading}
-          className={`w-full h-12 py-3 mt-4 font-bold text-base rounded-lg shadow-lg transition duration-300 ${
+          className={`w-full h-12 py-3 mt-2 font-bold text-base rounded-none shadow-lg transition duration-300 ${
             loading
               ? "opacity-50 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-white cursor-not-allowed"
-              : "bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-white font-bold text-base rounded-lg shadow-lg hover:opacity-90 transition duration-300"
+              : "bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-white font-bold text-base shadow-lg hover:opacity-90 transition duration-300"
           }`}
         >
           {loading ? "Processing..." : "Subscribe Now"}
         </Button>
-        <p className="text-sm text-semibold text-left mt-4 text-gray-600 dark:text-gray-300">
+        <p className="text-sm text-semibold text-left mt-2 text-gray-600 dark:text-gray-300">
           To enjoy 0.5% discounts and ₦0.00 service fees on cable TV, kindly{" "}
           <a
             href="/dashboard/reseller"
