@@ -13,35 +13,37 @@ const PricingSection = () => {
   return (
     <section id="pricing" className="relative py-10 md:py-20 bg-secondary">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Header */}
-        <h2 className="text-start md:text-center text-3xl md:text-4xl font-extrabold mb-6 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text">
-          Affordable VTU Pricing Plans
-        </h2>
-        <p className="text-start md:text-center mb-12 max-w-2xl mx-auto">
-          Get the best data & airtime rates across all networks. Choose your
-          preferred plan and start recharging instantly.
-        </p>
+        <div className="text-left md:text-center">
+          {/* Header */}
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-6 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text">
+            Affordable VTU Pricing Plans
+          </h2>
+          <p className="mb-12 max-w-2xl mx-auto">
+            Get the best data & airtime rates across all networks. Choose your
+            preferred plan and start recharging instantly.
+          </p>
+        </div>
 
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {pricingData.map((plan, index) => (
             <div
               key={index}
-              className="bg-gray-800 p-6 rounded-xl border border-gray-800 shadow-lg hover:scale-105 transition-transform duration-300 flex flex-col items-center text-white"
+              className="bg-secondary dark:bg-gray-900 p-6 rounded-sm shadow-lg hover:scale-105 transition-transform duration-300 flex flex-col items-center"
             >
               {/* Network Image */}
-              <div className="mb-4 w-20 h-20 relative">
+              <div className="relative">
                 <Image
                   src={plan.image}
                   alt={`${plan.network} Logo`}
-                  width={80}
-                  height={80}
-                  className="rounded-lg object-contain"
+                  width={50}
+                  height={50}
+                  className="rounded-lg object-contain pricing-image"
                 />
               </div>
 
               {/* Network Name */}
-              <h3 className="text-lg font-bold mb-2 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text">
+              <h3 className="text-base my-2 font-bold bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-transparent bg-clip-text">
                 {plan.network}
               </h3>
 
@@ -50,7 +52,7 @@ const PricingSection = () => {
                 {plan.prices.map((price, idx) => (
                   <li
                     key={idx}
-                    className="py-2 px-3 bg-gray-800 rounded-md shadow-md border border-gray-700"
+                    className="py-2 px-3 bg-secondary dark:bg-gray-800 rounded-sm shadow-sm border border-blue-200 dark:border-transparent"
                   >
                     {price}
                   </li>

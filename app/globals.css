@@ -115,3 +115,15 @@ html {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.pricing-image {
+  width: 50px !important;
+  height: 50px !important;
+  object-fit: cover !important;
+}
+
+.wallet-image {
+  width: 500px !important;
+  height: 370px !important;
+  object-fit: cover !important;
+}

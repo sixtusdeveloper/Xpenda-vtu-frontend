@@ -93,7 +93,7 @@ export default function Navbar({
               <a
                 key={item.name}
                 href={`#${item.href.substring(1)}`}
-                className={`text-base hover:text-pink-700 tracking-wide font-semibold cursor-pointer ${
+                className={`text-sm hover:text-pink-700 tracking-wide font-semibold cursor-pointer ${
                   activeSection === item.href.substring(1)
                     ? "hover:text-pink-700 bg-gradient-to-r from-pink-600 via-pink-500 to-yellow-600 font-semibold bg-clip-text text-transparent"
                     : "text-default hover:text-pink-700"
@@ -113,7 +113,7 @@ export default function Navbar({
             <SignedIn>
               <div className="flex items-center gap-4">
                 {user && (
-                  <span className="hidden lg:block text-base font-semibold bg-gradient-to-r from-pink-600 via-yellow-500 to-purple-500 bg-clip-text text-transparent">
+                  <span className="hidden lg:block text-sm font-semibold bg-gradient-to-r from-pink-600 via-yellow-500 to-purple-500 bg-clip-text text-transparent">
                     {user.firstName}
                   </span>
                 )}
@@ -123,7 +123,7 @@ export default function Navbar({
 
             <SignedOut>
               <SignInButton>
-                <button className="inline-flex text-base font-medium px-3 py-2 rounded-lg bg-blue-500 hover:bg-indego-800 bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-600 text-white">
+                <button className="inline-flex text-base font-semibold px-3 py-2 rounded-none bg-blue-500 hover:bg-indego-800 bg-gradient-to-r from-yellow-500 via-purple-500 to-indigo-500 text-white">
                   <UserIcon className="mr-1 h-5 w-5 text-white" /> Sign In
                 </button>
               </SignInButton>
@@ -171,7 +171,7 @@ export default function Navbar({
                     <a
                       key={item.name}
                       href={`#${item.href.substring(1)}`}
-                      className="-mx-3 block text-white rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:text-pink-700"
+                      className="-mx-3 block text-white rounded-lg px-3 py-2 text-sm font-semibold leading-7 hover:text-pink-700"
                       onClick={() => {
                         handleClick(item.href);
                         setMobileMenuOpen(false);
@@ -187,7 +187,7 @@ export default function Navbar({
                       <UserButton />
 
                       {user && (
-                        <span className="text-base font-semibold bg-gradient-to-r from-pink-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent">
+                        <span className="text-sm font-semibold bg-gradient-to-r from-pink-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent">
                           {user.firstName}
                         </span>
                       )}
@@ -195,7 +195,7 @@ export default function Navbar({
                   </SignedIn>
                   <SignedOut>
                     <SignInButton>
-                      <button className="inline-flex text-base font-medium px-3 py-2 rounded-lg hover:bg-indigo-800 bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-600 text-white">
+                      <button className="inline-flex text-base font-semibold px-3 py-2 rounded-none bg-blue-500 hover:bg-indego-800 bg-gradient-to-r from-yellow-500 via-purple-500 to-indigo-500 text-white">
                         <UserIcon className="mr-1 h-5 w-5 text-white" /> Sign In
                       </button>
                     </SignInButton>

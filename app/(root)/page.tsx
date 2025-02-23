@@ -9,6 +9,7 @@ import APISection from "@/components/APISection";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import ScrollIndicator from "@/components/ScrollIndicator";
+import OurProgram from "@/components/OurProgram";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <WalletSection />
         <TransactionSection />
         <APISection />
+        <OurProgram />
         <Footer />
         <ScrollIndicator />
       </div>

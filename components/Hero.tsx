@@ -82,10 +82,13 @@ const Home = () => {
     <>
       <section
         id="hero"
-        className="relative pt-8 lg:px-0 px-4 md:px-4 md:py-10 flex items-center flex-wrap justify-start md:justify-center w-full min-h-[80vh] lg:min-h-[500px] bg-gradient-to-r from-purple-700 via-indigo-500 to-purple-900"
+        className="relative pt-8 lg:px-0 px-4 md:px-4 md:py-10 flex items-center flex-wrap justify-start md:justify-center w-full min-h-[80vh] lg:min-h-[500px] bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/hero-bg.webp')" }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
+        {/* Hero Content */}
         <div className="relative flex flex-col-reverse lg:flex-row items-center justify-between w-full max-w-7xl mx-auto gap-8 px-4 mt-10 lg:px-16">
           {/* Left: Hero Text */}
           <motion.div
@@ -94,7 +97,6 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            {/* Greeting */}
             <motion.h3
               className="text-sm py-2 tracking-wide sm:text-base"
               initial={{ opacity: 0, x: -50 }}
@@ -113,7 +115,6 @@ const Home = () => {
               )}
             </motion.h3>
 
-            {/* Heading */}
             <motion.h1
               className="text-[2.2rem] leading-tight lg:text-[2.8rem] font-extrabold"
               initial={{ opacity: 0, x: 50 }}
@@ -136,7 +137,6 @@ const Home = () => {
               </strong>
             </motion.h1>
 
-            {/* Paragraph */}
             <motion.p
               className="lg:pt-4 pt-2 leading-6 text-base"
               initial={{ opacity: 0, y: 50 }}
@@ -179,7 +179,7 @@ const Home = () => {
           </motion.div>
 
           {/* Right: Xpenda-Themed Image */}
-          <motion.div
+          {/* <motion.div
             className="hidden lg:flex mt-10 w-full lg:w-1/2 justify-center items-center"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -188,20 +188,21 @@ const Home = () => {
             <Image
               src="/xpenda-hero.png"
               alt="Xpenda VTU Platform"
-              width={600}
-              height={300}
+              width={500}
+              height={500}
               className="xpenda-img rounded-lg shadow-lg"
             />
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
+
       {isModalOpen && (
         <div
           className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
           onClick={closeModal}
         >
           <div
-            className="bg-secondary p-6 rounded-lg shadow-lg w-[95%] max-w-md relative"
+            className="bg-secondary dark:bg-gray-900 p-6 rounded-lg shadow-lg w-[95%] max-w-md relative"
             onClick={(e) => e.stopPropagation()}
           >
             <button onClick={closeModal} className="absolute top-2 right-2">
@@ -222,13 +223,13 @@ const Home = () => {
               <div className="flex justify-between">
                 <button
                   onClick={handleLoggedInClick}
-                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-none w-[48%]"
+                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md w-[48%]"
                 >
                   I've Logged in
                 </button>
 
                 <button
-                  className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-none w-[48%]"
+                  className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md w-[48%]"
                   onClick={handleLoginClick}
                 >
                   Let me log in
@@ -245,7 +246,7 @@ const Home = () => {
           onClick={closeErrorModal}
         >
           <div
-            className="bg-secondary p-6 rounded-lg shadow-lg w-[95%] max-w-md relative"
+            className="bg-secondary dark:bg-gray-900 p-6 rounded-lg shadow-lg w-[95%] max-w-md relative"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -264,7 +265,7 @@ const Home = () => {
               </p>
               <button
                 onClick={() => router.push("/sign-in")}
-                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-none w-full"
+                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md w-full"
               >
                 Log in Now
               </button>
@@ -278,7 +279,7 @@ const Home = () => {
           className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
           onClick={closeSuccessModal}
         >
-          <div className="bg-secondary p-6 rounded-lg shadow-lg w-[95%] max-w-md relative">
+          <div className="bg-secondary dark:bg-gray-900 p-6 rounded-lg shadow-lg w-[95%] max-w-md relative">
             <button
               onClick={closeSuccessModal}
               className="absolute top-2 right-2"
@@ -296,7 +297,7 @@ const Home = () => {
               </p>
               <button
                 onClick={() => router.push("/dashboard")}
-                className="font-sans bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-600 text-white text-sm tracking-wide block px-4 py-2 rounded-none w-full"
+                className="bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-600 text-white text-sm tracking-wide block px-4 py-2 rounded-md w-full"
               >
                 Go to dashboard page
               </button>

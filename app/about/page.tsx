@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import AboutCallToAction from "@/components/AboutCallToAction";
 import AboutHero from "@/components/AboutHero";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -12,6 +13,7 @@ const page = () => {
         <Navbar navigation={aboutNavigation} />
         <AboutHero />
         <About />
+        <AboutCallToAction />
         <Footer />
         <ScrollIndicator />
       </div>

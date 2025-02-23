@@ -21,7 +21,7 @@ const TransactionSection = () => {
             alt="Secure Transactions - Xpenda"
             width={500}
             height={400}
-            className="rounded-lg shadow-lg"
+            className="rounded-md shadow-sm wallet-image"
           />
         </div>
 

@@ -39,7 +39,7 @@ const FAQPage = () => {
           Welcome to my FAQ page! Here you can find answers to the most common
           questions about my platform.
         </p>
-        <div className="rounded-none border p-2 md:p-6 shadow-lg">
+        <div className="rounded-none p-2 md:p-6 shadow-lg bg-secondary dark:bg-gray-900">
           {faqs.map((faq, index) => (
             <div key={index} className="border-b">
               <div

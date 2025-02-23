@@ -46,7 +46,7 @@ const WalletSection = () => {
             alt="Xpenda Wallet"
             width={500}
             height={400}
-            className="rounded-lg shadow-lg"
+            className="rounded-md shadow-lg wallet-image"
           />
         </div>
       </div>

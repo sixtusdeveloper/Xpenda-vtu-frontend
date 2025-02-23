@@ -162,14 +162,14 @@ const Footer = () => {
           <span className="block">
             <Link
               href="/terms"
-              className="text-yellow-400 hover:underline text-sm"
+              className="hover:text-yellow-400 hover:underline text-sm"
             >
               Terms & Conditions
             </Link>{" "}
             |
             <Link
               href="/privacy"
-              className="text-yellow-400 hover:underline ml-2 text-sm"
+              className="hover:text-yellow-400 hover:underline ml-2 text-sm"
             >
               Privacy Policy
             </Link>
@@ -179,7 +179,7 @@ const Footer = () => {
             <a
               href="https://www.sixtusdev.net"
               target="_blank"
-              className="text-yellow-500 hover:underline"
+              className="hover:text-yellow-500 hover:underline"
             >
               Sixtusdev
             </a>{" "}
