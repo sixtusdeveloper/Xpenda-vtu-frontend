@@ -5,6 +5,8 @@ import Image from "next/image";
 import FAQ from "./FAQ";
 
 import { useRouter } from "next/navigation";
+import { FaCheckCircle } from "react-icons/fa";
+import { CheckCircle } from "lucide-react";
 
 const About = () => {
   return (
@@ -31,9 +33,9 @@ const About = () => {
             alt="About Xpenda"
             width={500}
             height={400}
-            className="rounded-md shadow-lg"
+            className="rounded-md shadow-sm border wallet-image"
           />
-          <div className="shadow-sm lg:p-6 text-left">
+          <div className="shadow-sm rounded-sm lg:p-6 text-left">
             <h2 className="text-left text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-yellow-600 via-pink-500 to-purple-600 text-transparent bg-clip-text mb-6">
               What We Offer
             </h2>
@@ -42,12 +44,30 @@ const About = () => {
               <strong>fast, affordable, and automated</strong> VTU services,
               including:
             </p>
-            <ul className="list-disc pl-6 mt-4 space-y-2">
-              <li>Instant Airtime and Data Purchase</li>
-              <li>Electricity Bill Payment</li>
-              <li>Cable TV Subscription</li>
-              <li>Secure Airtime-to-Cash Conversion</li>
-              <li>Automated Reselling for Business Owners</li>
+            <ul className="list-none pl-6 mt-4 space-y-2">
+              <li className="py-1 flex gap-2 items-center">
+                <CheckCircle size={20} className="text-green-500" />
+                Instant Airtime and Data Purchase
+              </li>
+              <li className="py-1 flex gap-2 items-center">
+                <CheckCircle size={20} className="text-green-500" />
+                Electricity Bill Payment
+              </li>
+              <li className="flex gap-2 items-center">
+                {" "}
+                <CheckCircle size={20} className="text-green-500" />
+                Cable TV Subscription
+              </li>
+              <li className="py-1 flex gap-2 items-center">
+                {" "}
+                <CheckCircle size={20} className="text-green-500" />
+                Secure Airtime-to-Cash Conversion
+              </li>
+              <li className="py-1 flex gap-2 items-center">
+                {" "}
+                <CheckCircle size={20} className="text-green-500" />
+                Automated Reselling for Business Owners
+              </li>
             </ul>
           </div>
         </div>
@@ -59,8 +79,8 @@ const About = () => {
           </h2>
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             {/* Vision */}
-            <div className="p-8 bg-secondary dark:bg-gray-900 rounded-none shadow-lg text-left">
-              <h2 className="text-yellow-600 text-2xl font-bold mb-4">
+            <div className="p-8 bg-secondary dark:bg-gray-900 rounded-md shadow-sm border text-left">
+              <h2 className="text-green-500 text-2xl font-bold mb-4">
                 🌟 Our Vision
               </h2>
               <p className="leading-7 text-sm md:text-base">
@@ -72,8 +92,8 @@ const About = () => {
             </div>
 
             {/* Mission */}
-            <div className="p-8 bg-secondary dark:bg-gray-900 rounded-none shadow-lg text-left">
-              <h2 className="text-yellow-600 text-2xl font-bold mb-4">
+            <div className="p-8 bg-secondary dark:bg-gray-900 rounded-md shadow-sm border text-left">
+              <h2 className="text-pink-500 text-2xl font-bold mb-4">
                 🚀 Our Mission
               </h2>
               <p className="leading-7 text-sm md:text-base">
@@ -93,16 +113,16 @@ const About = () => {
             Why Choose Xpenda?
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-secondary dark:bg-gray-900 p-6 rounded-none shadow-lg">
-              <h3 className="text-yellow-600 text-xl font-semibold">
+            <div className="bg-secondary dark:bg-gray-900 p-6 rounded-md shadow-sm border">
+              <h3 className="text-green-500 text-xl font-semibold">
                 🌍 Accessibility
               </h3>
               <p className="mt-2">
                 Available 24/7 with seamless transactions nationwide.
               </p>
             </div>
-            <div className="bg-secondary dark:bg-gray-900 p-6 rounded-none shadow-lg">
-              <h3 className="text-yellow-600 text-xl font-semibold">
+            <div className="bg-secondary dark:bg-gray-900 p-6 rounded-md shadow-sm border">
+              <h3 className="text-blue-500 text-xl font-semibold">
                 🔒 Security
               </h3>
               <p className="mt-2">
@@ -110,7 +130,7 @@ const About = () => {
                 encryption.
               </p>
             </div>
-            <div className="bg-secondary dark:bg-gray-900 p-6 rounded-none shadow-lg">
+            <div className="bg-secondary dark:bg-gray-900 p-6 rounded-md shadow-sm border">
               <h3 className="text-yellow-600 text-xl font-semibold">
                 ⚡ Speed
               </h3>
@@ -118,8 +138,8 @@ const About = () => {
                 Instant top-ups and payments with no delays.
               </p>
             </div>
-            <div className="bg-secondary dark:bg-gray-900 p-6 rounded-none shadow-lg">
-              <h3 className="text-yellow-600 text-xl font-semibold">
+            <div className="bg-secondary dark:bg-gray-900 p-6 rounded-md shadow-sm border">
+              <h3 className="text-pink-500 text-xl font-semibold">
                 💰 Affordability
               </h3>
               <p className="mt-2">
@@ -138,20 +158,20 @@ const About = () => {
             Getting started is easy. Just follow these simple steps:
           </p>
           <div className="grid md:grid-cols-3 gap-8 mt-8">
-            <div className="bg-secondary dark:bg-gray-900 p-6 rounded-none shadow-lg text-left">
-              <h3 className="text-yellow-600 text-xl font-semibold">
+            <div className="bg-secondary dark:bg-gray-900 p-6 rounded-md shadow-sm border text-left">
+              <h3 className="text-green-500 text-xl font-semibold">
                 1️⃣ Sign Up
               </h3>
               <p className="mt-2">Create an account in seconds.</p>
             </div>
-            <div className="bg-secondary dark:bg-gray-900 p-6 rounded-none shadow-lg text-left">
-              <h3 className="text-yellow-600 text-xl font-semibold">
+            <div className="bg-secondary dark:bg-gray-900 p-6 rounded-md shadow-sm border text-left">
+              <h3 className="text-blue-500 text-xl font-semibold">
                 2️⃣ Fund Wallet
               </h3>
               <p className="mt-2">Add money to your wallet securely.</p>
             </div>
-            <div className="bg-secondary dark:bg-gray-900 p-6 rounded-none shadow-lg text-left">
-              <h3 className="text-yellow-600 text-xl font-semibold">
+            <div className="bg-secondary dark:bg-gray-900 p-6 rounded-md shadow-sm border text-left">
+              <h3 className="text-pink-500 text-xl font-semibold">
                 3️⃣ Start Transacting
               </h3>
               <p className="mt-2">

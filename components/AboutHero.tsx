@@ -47,7 +47,7 @@ const AboutHero = () => {
           <button
             type="button"
             onClick={navigateToDashboard}
-            className="h-12 px-6 py-3 rounded-none bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base"
+            className="h-12 px-6 py-3 rounded-none bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base hover:ease-in-out hover:scale-105 transition-all duration-300"
           >
             Get Started
           </button>
@@ -55,7 +55,7 @@ const AboutHero = () => {
           <button
             type="button"
             onClick={navigateToServices}
-            className="h-12 px-6 py-3 rounded-none bg-transparent ring-2 ring-purple-600 hover:bg-purple-600 border-white text-white font-semibold text-base transition-all duration-300"
+            className="h-11 mt-[1.3px] px-6 py-3 rounded-none bg-transparent ring-2 ring-purple-600 hover:bg-purple-600 border-white text-white font-semibold text-base hover:ease-in-out hover:scale-105 transition-all duration-300"
           >
             Our Services
           </button>

@@ -5,7 +5,7 @@ const ContactPage = () => {
     <>
       {/* Contact Hero Section */}
       <section
-        className="pt-8 lg:px-0 px-4 md:px-4 md:py-10 relative w-full min-h-[50vh] lg:min-h-[400px] flex items-center justify-start text-white text-left bg-no-repeat bg-cover bg-center"
+        className="pt-8 lg:px-0 px-4 md:px-4 md:py-10 relative w-full min-h-[50vh] lg:min-h-[480px] flex items-center justify-start text-white text-left bg-no-repeat bg-cover bg-center"
         style={{
           backgroundImage: "url('/images/contact-bg.webp')",
         }}
@@ -20,7 +20,7 @@ const ContactPage = () => {
             opportunities. We're here to help!
           </p>
 
-          <div className="mt-6">
+          <div className="mt-6 flex flex-wrap justify-start md:justify-start gap-4">
             <a
               href="mailto:contact@sixtusdev.net?subject=Let's%20connect!&body=Hi%20Sixtusdev%20Team,%0D%0A%0D%0AI%20would%20like%20to%20connect%20with%20you%20for%20..."
               target="_blank"
@@ -28,6 +28,13 @@ const ContactPage = () => {
             >
               <span>Email Us</span>
               <Send size={20} className="text-gray-200 ml-2" />
+            </a>
+
+            <a
+              href="#contact-us"
+              className="h-11 mt-[1.3px] px-6 py-3 rounded-none bg-transparent ring-2 ring-purple-600 hover:bg-purple-600 border-white text-white font-semibold text-base hover:ease-in-out hover:scale-105 transition-all duration-300"
+            >
+              Contact Us
             </a>
           </div>
         </div>

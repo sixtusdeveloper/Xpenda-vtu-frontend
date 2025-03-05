@@ -29,7 +29,7 @@ const PricingHero = () => {
         transition={{ duration: 0.9, ease: "easeOut" }}
       >
         <motion.h3
-          className="text-sm py-2 tracking-wide sm:text-base"
+          className="text-sm py-2 tracking-wide font-semibold sm:text-base"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
@@ -53,7 +53,7 @@ const PricingHero = () => {
           trusted VTU partner.
         </p>
         <Link href="#pricing">
-          <button className="mt-4 px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg shadow-lg hover:scale-105 transition-all">
+          <button className="mt-4 px-6 py-3 bg-white text-purple-600 font-semibold rounded-none shadow-lg hover:scale-105 transition-all">
             Explore Plans
           </button>
         </Link>

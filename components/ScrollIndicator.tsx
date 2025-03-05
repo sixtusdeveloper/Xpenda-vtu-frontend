@@ -73,7 +73,7 @@ const ScrollIndicator = () => {
       } cursor-pointer p-4 rounded-full border shadow-lg
       bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-white 
       animate-[pulse_2s_ease-in-out_infinite] transition-all duration-700 
-      hover:scale-110 hover:animate-none right-2 lg:right-6 z-50`}
+      hover:scale-110 hover:ease-out hover:animate-none right-2 lg:right-6 z-50`}
       style={{ transition: "top 0.3s, bottom 0.3s" }}
     >
       {scrollDirection === "down" ? (

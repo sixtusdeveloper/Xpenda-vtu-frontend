@@ -50,9 +50,9 @@ const APISection = () => {
             <button
               type="button"
               onClick={navigateToDocs} // ✅ Trigger instant navigation on click
-              className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-none shadow-lg transition-all duration-300"
+              className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-none shadow-lg hover:ease-in-out hover:scale-105 transition-all duration-300"
             >
-              View API Documentation
+              View API Docs
             </button>
           </div>
         </div>
@@ -64,7 +64,7 @@ const APISection = () => {
             alt="Xpenda API Integration"
             width={500}
             height={400}
-            className="rounded-md shadow-lg wallet-image"
+            className="rounded-md shadow-sm border wallet-image"
           />
         </div>
       </div>

@@ -29,7 +29,7 @@ const PricingSection = () => {
           {pricingData.map((plan, index) => (
             <div
               key={index}
-              className="bg-secondary dark:bg-gray-900 p-6 rounded-sm shadow-lg hover:scale-105 transition-transform duration-300 flex flex-col items-center"
+              className="bg-secondary dark:bg-gray-900 p-6 rounded-sm shadow-sm border hover:scale-105 transition-transform duration-300 flex flex-col items-center"
             >
               {/* Network Image */}
               <div className="relative">
@@ -67,7 +67,7 @@ const PricingSection = () => {
           <button
             type="button"
             onClick={navigateToPricing}
-            className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-none shadow-lg"
+            className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-none shadow-lg hover:ease-in-out hover:scale-105 transition-all duration-300"
           >
             See All Pricing
           </button>

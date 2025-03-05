@@ -78,7 +78,7 @@ const WalletFunding = () => {
     <>
       <section
         id="wallet"
-        className="w-full py-20 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-white text-center"
+        className="w-full py-10 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-white text-center"
       >
         <div className="max-w-5xl mx-auto px-6 lg:flex lg:items-center lg:justify-between">
           {/* Left Side - Text Content */}
@@ -94,7 +94,7 @@ const WalletFunding = () => {
               <button
                 type="button"
                 onClick={openModal}
-                className="px-6 h-12 py-3 bg-white text-purple-600 font-semibold rounded-lg shadow-lg hover:scale-105 transition-all"
+                className="px-6 h-12 py-3 bg-white text-purple-600 font-semibold rounded-none shadow-lg hover:scale-105 transition-all"
               >
                 Fund Your Wallet Now
               </button>
@@ -108,7 +108,7 @@ const WalletFunding = () => {
               alt="Wallet Funding Illustration"
               width={500}
               height={300}
-              className="rounded-xl shadow-lg"
+              className="rounded-sm shadow-md wallet-image"
             />
           </div>
         </div>
@@ -119,7 +119,7 @@ const WalletFunding = () => {
           onClick={closeModal}
         >
           <div
-            className="bg-secondary p-6 rounded-lg shadow-lg w-[95%] max-w-md relative"
+            className="bg-secondary dark:bg-gray-800 p-6 rounded-lg shadow-lg w-[95%] max-w-md relative"
             onClick={(e) => e.stopPropagation()}
           >
             <button onClick={closeModal} className="absolute top-2 right-2">
@@ -163,7 +163,7 @@ const WalletFunding = () => {
           onClick={closeErrorModal}
         >
           <div
-            className="bg-secondary p-6 rounded-lg shadow-lg w-[95%] max-w-md relative"
+            className="bg-secondary dark:bg-gray-800 p-6 rounded-lg shadow-lg w-[95%] max-w-md relative"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -196,7 +196,7 @@ const WalletFunding = () => {
           className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
           onClick={closeSuccessModal}
         >
-          <div className="bg-secondary p-6 rounded-lg shadow-lg w-[95%] max-w-md relative">
+          <div className="bg-secondary dark:bg-gray-800 p-6 rounded-lg shadow-lg w-[95%] max-w-md relative">
             <button
               onClick={closeSuccessModal}
               className="absolute top-2 right-2"
@@ -214,7 +214,7 @@ const WalletFunding = () => {
               </p>
               <button
                 onClick={() => router.push("/dashboard/fund-wallet")}
-                className="font-sans bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-600 text-white text-sm tracking-wide block px-4 py-2 rounded-md w-full"
+                className="bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-600 text-white text-sm tracking-wide block px-4 py-2 rounded-md w-full"
               >
                 Proceed to Wallet Funding
               </button>

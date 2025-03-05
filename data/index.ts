@@ -6,7 +6,6 @@ export const navigation = [
     { name: "Wallet", href: "#wallet" },
     { name: "Transactions", href: "#transactions" },
     { name: "API Docs", href: "#api-docs" },
-    { name: "Contact", href: "#contact" },
   ];
   
 //============================= Xpenda About page Navigation Links ============================//

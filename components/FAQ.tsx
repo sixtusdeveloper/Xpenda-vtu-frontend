@@ -39,7 +39,7 @@ const FAQPage = () => {
           Welcome to my FAQ page! Here you can find answers to the most common
           questions about my platform.
         </p>
-        <div className="rounded-none p-2 md:p-6 shadow-lg bg-secondary dark:bg-gray-900">
+        <div className="rounded-none p-2 md:p-6 shadow-sm border bg-secondary dark:bg-gray-900">
           {faqs.map((faq, index) => (
             <div key={index} className="border-b">
               <div
@@ -76,13 +76,13 @@ const FAQPage = () => {
           </h2>
           <div className="flex py-4 justify-center items-center gap-6">
             <button
-              className="bg-gradient-to-r from-blue-500 via-purple-500 to-purple-600 hover:scale-105 text-white text-base font-semibold h-12 px-6 py-3 rounded-none"
+              className="bg-gradient-to-r from-blue-500 via-purple-500 to-purple-600 hover:ease-in-out hover:scale-105 transition-all duration-300 text-white text-base font-semibold h-12 px-6 py-3 rounded-none"
               onClick={() => handleFeedback("yes")}
             >
               Yes, they were
             </button>
             <button
-              className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:scale-105 text-white text-base font-semibold h-12 px-6 py-3 rounded-none"
+              className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:ease-in-out hover:scale-105 transition-all duration-300 text-white text-base font-semibold h-12 px-6 py-3 rounded-none"
               onClick={() => handleFeedback("no")}
             >
               No, they weren't
@@ -109,13 +109,15 @@ const FAQPage = () => {
                 </h3>
                 <p className="text-sm mt-4">
                   If you need any other questions, kindly reach out using the
-                  message link below this page.
+                  Contact link below this page or chat with us live using our
+                  customer support widget at the right hand corner of the
+                  website.
                 </p>
                 <a
                   href="/contact"
                   className="text-green-500 hover:underline mt-4 block"
                 >
-                  Message me
+                  Contact Us
                 </a>
               </>
             ) : (
@@ -126,13 +128,15 @@ const FAQPage = () => {
                 </h3>
                 <p className="text-sm mt-4">
                   If you need further assistance, feel free to reach out using
-                  the message link below.
+                  the Contact link below this page or chat with us live using
+                  our customer support widget at the right hand corner of the
+                  website.
                 </p>
                 <a
                   href="/contact"
                   className="text-green-500 hover:underline mt-4 block"
                 >
-                  Message me
+                  Contact Us
                 </a>
               </>
             )}

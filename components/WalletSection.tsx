@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { CheckCircle } from "lucide-react";
 
 const WalletSection = () => {
   const router = useRouter();
@@ -24,15 +25,35 @@ const WalletSection = () => {
             processing.
           </p>
           <ul className="mt-6 space-y-2 text-sm md:text-md">
-            <li>✔️ Instant funding & withdrawals</li>
-            <li>✔️ Secure transactions</li>
-            <li>✔️ Track your spending easily</li>
+            <li className="inline-flex gap-2">
+              <CheckCircle
+                size={20}
+                className="text-green-500 text-center mx-auto"
+              />{" "}
+              Instant funding & withdrawals
+            </li>
+            <br />
+            <li className="inline-flex gap-2">
+              <CheckCircle
+                size={20}
+                className="text-green-500 text-center mx-auto"
+              />
+              Secure transactions
+            </li>
+            <br />
+            <li className="inline-flex gap-2">
+              <CheckCircle
+                size={20}
+                className="text-green-500 text-center mx-auto"
+              />
+              Track your spending easily
+            </li>
           </ul>
           <div className="mt-6">
             <button
               type="button"
               onClick={navigateToWallet}
-              className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-none"
+              className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-base h-12 px-6 py-3 rounded-none hover:ease-in-out hover:scale-105 transition-all duration-300"
             >
               Go to Wallet
             </button>
@@ -46,7 +67,7 @@ const WalletSection = () => {
             alt="Xpenda Wallet"
             width={500}
             height={400}
-            className="rounded-md shadow-lg wallet-image"
+            className="rounded-md shadow-sm border wallet-image"
           />
         </div>
       </div>

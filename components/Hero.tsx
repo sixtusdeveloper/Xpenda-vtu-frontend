@@ -163,7 +163,7 @@ const Home = () => {
               <button
                 type="button"
                 onClick={openModal}
-                className="h-12 px-6 py-3 rounded-none bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-sm md:text-base lg:text-base"
+                className="h-12 px-6 py-3 rounded-none bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white font-semibold text-sm md:text-base lg:text-base hover:ease-in-out hover:scale-105 transition-all duration-300"
               >
                 Get Started
               </button>
@@ -171,7 +171,7 @@ const Home = () => {
               <button
                 type="button"
                 onClick={navigateToAbout}
-                className="h-12 px-6 py-3 rounded-none bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-600 text-white hover:bg-purple-700 font-semibold text-sm md:text-base lg:text-base"
+                className="h-12 px-6 py-3 rounded-none bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-600 text-white hover:bg-purple-700 font-semibold text-sm md:text-base lg:text-base hover:ease-in-out hover:scale-105 transition-all duration-300"
               >
                 About Us
               </button>

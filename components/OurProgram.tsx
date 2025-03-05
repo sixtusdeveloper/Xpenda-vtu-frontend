@@ -21,7 +21,7 @@ const OurProgram = () => {
         </p>
         <a
           href="/programs"
-          className="mt-6 py-3 px-6 text-base font-semibold rounded-none inline-block bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white shadow-lg transition-all duration-300"
+          className="mt-6 py-3 px-6 text-base font-semibold rounded-none inline-block bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 hover:bg-yellow-600 text-white shadow-lg hover:ease-in-out hover:scale-105 transition-all duration-300"
         >
           Learn More
         </a>
