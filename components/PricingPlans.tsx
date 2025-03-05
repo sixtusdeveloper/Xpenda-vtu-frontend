@@ -18,7 +18,7 @@ const PricingPlans = () => {
             <h3 className="text-2xl font-semibold text-left bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 bg-clip-text text-transparent py-2">
               {section.category}
             </h3>
-            <div className="overflow-x-auto bg-secondary dark:bg-gray-800 shadow-lg rounded-lg">
+            <div className="overflow-x-auto bg-secondary dark:bg-gray-900 shadow-lg rounded-lg">
               <table className="w-full border">
                 <thead>
                   <tr className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-white">

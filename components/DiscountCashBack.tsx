@@ -90,7 +90,7 @@ const DiscountCashback = () => {
           </p>
 
           {/* Discount Table */}
-          <div className="mt-8 overflow-x-auto bg-secondary dark:bg-gray-800 shadow-lg rounded-lg">
+          <div className="mt-8 overflow-x-auto bg-secondary dark:bg-gray-900 shadow-lg rounded-lg">
             <table className="w-full border">
               <thead>
                 <tr className="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 text-white">
